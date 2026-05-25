@@ -823,7 +823,7 @@
     "id_wp": 5365,
     "titulo_atual": "SCANIA",
     "marca_atual": "SCANIA",
-    "modelo_atual": "R-112-R113-R114-R124-R142-R143-R164-R380-R400-R420-R440-R470-R480-R490-R500-R560-R580-R620",
+    "modelo_atual": "R-112, R-113, R-114, R-124, R-142, R-143, R-164, R-380, R-400, R-420, R-440, R-470, R-480, R-490, R-500, R-560, R-580, R-620",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "scania",
@@ -833,7 +833,7 @@
     "id_wp": 5383,
     "titulo_atual": "SCANIA - 111 (JACARÉ)",
     "marca_atual": "SCANIA",
-    "modelo_atual": "111 (JACARÉ)",
+    "modelo_atual": "111",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "scania-2",
@@ -1083,7 +1083,7 @@
     "id_wp": 5686,
     "titulo_atual": "M.BENZ/ACTROS - 4844",
     "marca_atual": "MERCEDES-BENZ",
-    "modelo_atual": "ACTROS - 4844",
+    "modelo_atual": "ACTROS 4844",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "m-benz-actros-4844",
@@ -1093,7 +1093,7 @@
     "id_wp": 5693,
     "titulo_atual": "M.BENZ/ACTROS - 4160",
     "marca_atual": "MERCEDES-BENZ",
-    "modelo_atual": "ACTROS - 4160",
+    "modelo_atual": "ACTROS 4160",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "m-benz-actros-4160",
@@ -1273,7 +1273,7 @@
     "id_wp": 5902,
     "titulo_atual": "CITROEN - C3 TODOS",
     "marca_atual": "CITROEN",
-    "modelo_atual": "C3 TODOS",
+    "modelo_atual": "C3",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "citroen-c3-picasso",
@@ -1401,7 +1401,7 @@
   },
   {
     "id_wp": 6051,
-    "titulo_atual": "MERCEDES-BENS - I/M C-200 CLA-200",
+    "titulo_atual": "MERCEDES-BENZ - I/M C-200 CLA-200",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "C-200 CLA-200",
     "ano_inicio_atual": null,
@@ -1473,7 +1473,7 @@
     "id_wp": 6124,
     "titulo_atual": "FORD - TAURUS IMPORTADO",
     "marca_atual": "FORD",
-    "modelo_atual": "TAURUS IMPORTADO",
+    "modelo_atual": "TAURUS",
     "ano_inicio_atual": 1993,
     "ano_fim_atual": null,
     "slug": "ford-taurus-2",
@@ -1493,7 +1493,7 @@
     "id_wp": 6136,
     "titulo_atual": "CITROEN - C4 TODOS",
     "marca_atual": "CITROEN",
-    "modelo_atual": "C4 TODOS",
+    "modelo_atual": "C4",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "citroen-grand-c4-picasso",
@@ -1563,7 +1563,7 @@
     "id_wp": 6255,
     "titulo_atual": "VW - IMP/SPACE CROSS",
     "marca_atual": "VOLKSWAGEN",
-    "modelo_atual": "IMP/SPACE CROSS",
+    "modelo_atual": "SPACE CROSS",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "vw-space",
@@ -1693,7 +1693,7 @@
     "id_wp": 6369,
     "titulo_atual": "FORD - DEL REY e BELINA",
     "marca_atual": "FORD",
-    "modelo_atual": "DEL REY e BELINA",
+    "modelo_atual": "DEL REY, BELINA",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "foed-del-rey",
@@ -1893,7 +1893,7 @@
     "id_wp": 6582,
     "titulo_atual": "RENAULT SCÉNIC I",
     "marca_atual": "RENAULT",
-    "modelo_atual": "SCÉNIC I",
+    "modelo_atual": "SCÉNIC",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "renault-scenic-i",
@@ -2124,9 +2124,9 @@
     "titulo_atual": "VOLKSWAGEN - GOLF 4° GERAÇÃO",
     "marca_atual": "VOLKSWAGEN",
     "modelo_atual": "GOLF 4° GERAÇÃO",
-    "ano_inicio_atual": null,
-    "ano_fim_atual": null,
-    "slug": "vw-golf",
+    "ano_inicio_atual": 1997,
+    "ano_fim_atual": 2003,
+      "slug": "vw-golf",
     "url": null
   },
   {
@@ -2163,7 +2163,7 @@
     "id_wp": 7207,
     "titulo_atual": "GM-CHEVROLET - CRUZER IMPORTADO",
     "marca_atual": "GM - Chevrolet",
-    "modelo_atual": "CRUZER IMPORTADO",
+    "modelo_atual": "CRUZER",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "gm-cruzer-turbo",
@@ -2173,7 +2173,7 @@
     "id_wp": 7221,
     "titulo_atual": "FIAT - FIORINO (NOVO)",
     "marca_atual": "FIAT",
-    "modelo_atual": "FIORINO (NOVO)",
+    "modelo_atual": "FIORINO",
     "ano_inicio_atual": 2023,
     "ano_fim_atual": null,
     "slug": "fiat-fiorino-2023",
@@ -2224,8 +2224,8 @@
     "titulo_atual": "VOLKSWAGEN - GOLF 5° GERAÇÃO",
     "marca_atual": "VOLKSWAGEN",
     "modelo_atual": "GOLF",
-    "ano_inicio_atual": null,
-    "ano_fim_atual": null,
+    "ano_inicio_atual": 2004,
+    "ano_fim_atual": 2009,
     "slug": "vw-golf-gti",
     "url": null
   },
@@ -2233,7 +2233,7 @@
     "id_wp": 7364,
     "titulo_atual": "TOYOTA - NOVA HILUX - SW4",
     "marca_atual": "TOYOTA",
-    "modelo_atual": "HILUX - SW4",
+    "modelo_atual": "HILUX SW4",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "toyota-hilux-sw4",
@@ -2283,7 +2283,7 @@
     "id_wp": 7480,
     "titulo_atual": "VW - DELIVERY - 11.180",
     "marca_atual": "VOLKSWAGEN",
-    "modelo_atual": "DELIVERY 11.180",
+    "modelo_atual": "DELIVERY 11-180",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "vw-delivery-11-180",
@@ -2321,9 +2321,9 @@
   },
   {
     "id_wp": 7570,
-    "titulo_atual": "IVECO - TECTOR 240 E 80",
+    "titulo_atual": "IVECO - TECTOR 240 E 30",
     "marca_atual": "IVECO",
-    "modelo_atual": "TECTOR 240 E 80",
+    "modelo_atual": "TECTOR 240 E 30",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "iveco-tector-240e80",
@@ -2364,8 +2364,8 @@
     "titulo_atual": "KIA - SPORTAGE MR E TURBO",
     "marca_atual": "Kia Motors",
     "modelo_atual": "SPORTAGE MR E TURBO",
-    "ano_inicio_atual": null,
-    "ano_fim_atual": null,
+    "ano_inicio_atual": 2022,
+    "ano_fim_atual": 2026,
     "slug": "imp-kia-sportage-mr-e-turbo",
     "url": null
   },
@@ -2374,8 +2374,8 @@
     "titulo_atual": "KIA SPORTAGE G2",
     "marca_atual": "Kia Motors",
     "modelo_atual": "SPORTAGE G2",
-    "ano_inicio_atual": null,
-    "ano_fim_atual": null,
+    "ano_inicio_atual": 2004,
+    "ano_fim_atual": 2010,
     "slug": "kia-sportage-g2",
     "url": null
   },
@@ -2393,7 +2393,7 @@
     "id_wp": 7845,
     "titulo_atual": "FORD - MUSTANG GT-MACH 1 G1",
     "marca_atual": "FORD",
-    "modelo_atual": "MUSTANG GT-MACH 1 G1",
+    "modelo_atual": "MUSTANG GT, MACH 1",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "ford-mustang-gt-mach-1",
@@ -2503,7 +2503,7 @@
     "id_wp": 8606,
     "titulo_atual": "HONDA - CIVIC - G9",
     "marca_atual": "HONDA",
-    "modelo_atual": "CIVIC",
+    "modelo_atual": "CIVIC - G9",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "honda-civic-g9",
@@ -2531,7 +2531,7 @@
   },
   {
     "id_wp": 8849,
-    "titulo_atual": "MERCEDES BENS - ATEGO 2426",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO 2426",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO 2426",
     "ano_inicio_atual": null,
@@ -2543,7 +2543,7 @@
     "id_wp": 8998,
     "titulo_atual": "FIAT - STRADA (NOVA)",
     "marca_atual": "FIAT",
-    "modelo_atual": "STRADA (NOVA)",
+    "modelo_atual": "STRADA",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "nova-fiat-strada",
@@ -3211,12 +3211,12 @@
   },
   {
     "id_wp": 12309,
-    "titulo_atual": "MERCEDES-BENS - AXOR 3344",
+    "titulo_atual": "MERCEDES-BENZ - AXOR 3344",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AXOR 3344",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-axor-3344",
+    "slug": "mercedes-benz-axor-3344",
     "url": null
   },
   {
@@ -3781,12 +3781,12 @@
   },
   {
     "id_wp": 15357,
-    "titulo_atual": "MERCEDES BENS - ATRON 1319",
+    "titulo_atual": "MERCEDES-BENZ - ATRON 1319",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATRON 1319",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atron-1319",
+    "slug": "mercedes-benz-atron-1319",
     "url": null
   },
   {
@@ -3796,7 +3796,7 @@
     "modelo_atual": "1318",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-l-1318",
+    "slug": "mercedes-benz-l-1318",
     "url": null
   },
   {
@@ -4161,7 +4161,7 @@
   },
   {
     "id_wp": 17034,
-    "titulo_atual": "MERCEDES-BENS - ATEGO 2730",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO 2730",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO 2730",
     "ano_inicio_atual": null,
@@ -4381,62 +4381,62 @@
   },
   {
     "id_wp": 17722,
-    "titulo_atual": "MERCEDES-BENS I/M C-180 CGI 180",
+    "titulo_atual": "MERCEDES-BENZ I/M C-180 CGI 180",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "C-180 CGI 180",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-i-m-c-180",
+    "slug": "mercedes-benz-i-m-c-180",
     "url": null
   },
   {
     "id_wp": 17754,
-    "titulo_atual": "MERCEDES-BENS I/M A-250 CGI 250",
+    "titulo_atual": "MERCEDES-BENZ I/M A-250 CGI 250",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "A-250 CGI 250",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-i-m-a-250",
+    "slug": "mercedes-benz-i-m-a-250",
     "url": null
   },
   {
     "id_wp": 17774,
-    "titulo_atual": "MERCEDES-BENS - I/M AMG CLA 35",
+    "titulo_atual": "MERCEDES-BENZ - I/M AMG CLA 35",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "I/M AMG CLA 35",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-i-m-amg-cla-35",
+    "slug": "mercedes-benz-i-m-amg-cla-35",
     "url": null
   },
   {
     "id_wp": 17797,
-    "titulo_atual": "MERCEDES-BENS - A-200 2020",
+    "titulo_atual": "MERCEDES-BENZ - A-200 2020",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "A-200",
     "ano_inicio_atual": 2020,
     "ano_fim_atual": 2020,
-    "slug": "mercedes-bens-i-m-a-200-2020",
+    "slug": "mercedes-benz-i-m-a-200-2020",
     "url": null
   },
   {
     "id_wp": 17814,
-    "titulo_atual": "MERCEDES-BENS I/M GLE 350 DIESEL E GASOLINA",
+    "titulo_atual": "MERCEDES-BENZ I/M GLE 350 DIESEL E GASOLINA",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "GLE 350",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-i-m-gle-350-diesel-e-gasolina",
+    "slug": "mercedes-benz-i-m-gle-350-diesel-e-gasolina",
     "url": null
   },
   {
     "id_wp": 17845,
-    "titulo_atual": "MERCEDES-BENS I/M GLE 400 DIESEL",
+    "titulo_atual": "MERCEDES-BENZ I/M GLE 400 DIESEL",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "GLE 400 DIESEL",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-i-m-gle-400-diesel",
+    "slug": "mercedes-benz-i-m-gle-400-diesel",
     "url": null
   },
   {
@@ -4671,12 +4671,12 @@
   },
   {
     "id_wp": 19066,
-    "titulo_atual": "MERCEDES-BENS - ACTROS 2651",
+    "titulo_atual": "MERCEDES-BENZ - ACTROS 2651",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACTROS 2651",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-actros-2651",
+    "slug": "mercedes-benz-actros-2651",
     "url": null
   },
   {
@@ -4981,12 +4981,12 @@
   },
   {
     "id_wp": 20858,
-    "titulo_atual": "MERCEDES BENS - 1720",
+    "titulo_atual": "MERCEDES-BENZ - 1720",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1720",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1720",
+    "slug": "mercedes-benz-1720",
     "url": null
   },
   {
@@ -5281,42 +5281,42 @@
   },
   {
     "id_wp": 22476,
-    "titulo_atual": "MERCEDES BENS - 1621",
+    "titulo_atual": "MERCEDES-BENZ - 1621",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1621",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1621",
+    "slug": "mercedes-benz-1621",
     "url": null
   },
   {
     "id_wp": 22499,
-    "titulo_atual": "MERCEDES-BENS - 710",
+    "titulo_atual": "MERCEDES-BENZ - 710",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "710",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-710",
+    "slug": "mercedes-benz-710",
     "url": null
   },
   {
     "id_wp": 22524,
-    "titulo_atual": "MERCEDES-BENS - 1620",
+    "titulo_atual": "MERCEDES-BENZ - 1620",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1620",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1620",
+    "slug": "mercedes-benz-1620",
     "url": null
   },
   {
     "id_wp": 22570,
-    "titulo_atual": "MERCEDES BENS - ATRON 2324",
+    "titulo_atual": "MERCEDES-BENZ - ATRON 2324",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATRON 2324",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atron-2324",
+    "slug": "mercedes-benz-atron-2324",
     "url": null
   },
   {
@@ -5854,8 +5854,8 @@
     "titulo_atual": "KIA - SPORTAGE G3",
     "marca_atual": "Kia Motors",
     "modelo_atual": "SPORTAGE G3",
-    "ano_inicio_atual": null,
-    "ano_fim_atual": null,
+    "ano_inicio_atual": 2011,
+    "ano_fim_atual": 2016,
     "slug": "kia-sportage-2",
     "url": null
   },
@@ -6121,12 +6121,12 @@
   },
   {
     "id_wp": 25606,
-    "titulo_atual": "MERCEDES BENS - 1420",
+    "titulo_atual": "MERCEDES-BENZ - 1420",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1420",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1420",
+    "slug": "mercedes-benz-1420",
     "url": null
   },
   {
@@ -6141,52 +6141,52 @@
   },
   {
     "id_wp": 25661,
-    "titulo_atual": "MERCEDES BENS - 1718",
+    "titulo_atual": "MERCEDES-BENZ - 1718",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1718",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1718",
+    "slug": "mercedes-benz-1718",
     "url": null
   },
   {
     "id_wp": 25699,
-    "titulo_atual": "MERCEDES-BENS - ATRON 1719",
+    "titulo_atual": "MERCEDES-BENZ - ATRON 1719",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATRON 1719",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atron-1719",
+    "slug": "mercedes-benz-atron-1719",
     "url": null
   },
   {
     "id_wp": 25721,
-    "titulo_atual": "MERCEDES BENS - ATEGO 1719",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO 1719",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO 1719",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-1719",
+    "slug": "mercedes-benz-atego-1719",
     "url": null
   },
   {
     "id_wp": 25746,
-    "titulo_atual": "MERCEDES BENS - ATEGO 1419",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO 1419",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO 1419",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-1419",
+    "slug": "mercedes-benz-atego-1419",
     "url": null
   },
   {
     "id_wp": 25771,
-    "titulo_atual": "MERCEDES BENS - ATEGO 3030",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO 3030",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO 3030",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-3030",
+    "slug": "mercedes-benz-atego-3030",
     "url": null
   },
   {
@@ -6361,12 +6361,12 @@
   },
   {
     "id_wp": 26547,
-    "titulo_atual": "MERCEDES BENS - AXOR 3340",
+    "titulo_atual": "MERCEDES-BENZ - AXOR 3340",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AXOR 3340",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-axor-3340",
+    "slug": "mercedes-benz-axor-3340",
     "url": null
   },
   {
@@ -6421,32 +6421,32 @@
   },
   {
     "id_wp": 26759,
-    "titulo_atual": "MERCEDES-BENS - IMP C-240",
+    "titulo_atual": "MERCEDES-BENZ - IMP C-240",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "C-240",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-imp-c-240",
+    "slug": "mercedes-benz-imp-c-240",
     "url": null
   },
   {
     "id_wp": 26777,
-    "titulo_atual": "MERCEDES-BENS - IMP C-280",
+    "titulo_atual": "MERCEDES-BENZ - IMP C-280",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "C-280",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-imp-c-280",
+    "slug": "mercedes-benz-imp-c-280",
     "url": null
   },
   {
     "id_wp": 26809,
-    "titulo_atual": "MERCEDES-BENS - IMP C-180",
+    "titulo_atual": "MERCEDES-BENZ - IMP C-180",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "C-180",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-imp-c-180",
+    "slug": "mercedes-benz-imp-c-180",
     "url": null
   },
   {
@@ -6774,8 +6774,8 @@
     "titulo_atual": "KIA - SPORTAGE G4",
     "marca_atual": "Kia Motors",
     "modelo_atual": "SPORTAGE G4",
-    "ano_inicio_atual": null,
-    "ano_fim_atual": null,
+    "ano_inicio_atual": 2015,
+    "ano_fim_atual": 2021,
     "slug": "kia-sportage-g4",
     "url": null
   },
@@ -6831,12 +6831,12 @@
   },
   {
     "id_wp": 28309,
-    "titulo_atual": "MERCEDES-BENS - IMP-GLA 200",
+    "titulo_atual": "MERCEDES-BENZ - IMP-GLA 200",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "GLA 200",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-gla-200-250",
+    "slug": "mercedes-benz-gla-200-250",
     "url": null
   },
   {
@@ -6901,22 +6901,22 @@
   },
   {
     "id_wp": 28710,
-    "titulo_atual": "MERCEDES-BENS - A160",
+    "titulo_atual": "MERCEDES-BENZ - A160",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "A160",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-classe-a",
+    "slug": "mercedes-benz-classe-a",
     "url": null
   },
   {
     "id_wp": 28744,
-    "titulo_atual": "MERCEDES-BENS - 608D",
+    "titulo_atual": "MERCEDES-BENZ - 608D",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "608D",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-608d",
+    "slug": "mercedes-benz-608d",
     "url": null
   },
   {
@@ -7051,52 +7051,52 @@
   },
   {
     "id_wp": 29302,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 815 G2",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 815 G2",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 815 G2",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-accelo-815",
+    "slug": "mercedes-benz-accelo-815",
     "url": null
   },
   {
     "id_wp": 29347,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 815 G1",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 815 G1",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 815 G1",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-accelo-815-g1",
+    "slug": "mercedes-benz-accelo-815-g1",
     "url": null
   },
   {
     "id_wp": 29394,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 1016",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 1016",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 1016",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-accelo-1016",
+    "slug": "mercedes-benz-accelo-1016",
     "url": null
   },
   {
     "id_wp": 29427,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 1017",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 1017",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 1017",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-accelo-1017",
+    "slug": "mercedes-benz-accelo-1017",
     "url": null
   },
   {
     "id_wp": 29431,
-    "titulo_atual": "MERCEDES-BENS - 2635",
+    "titulo_atual": "MERCEDES-BENZ - 2635",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "2635",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2635",
+    "slug": "mercedes-benz-2635",
     "url": null
   },
   {
@@ -7181,12 +7181,12 @@
   },
   {
     "id_wp": 29630,
-    "titulo_atual": "MERCEDES-BENS - ONIBUS URBANOS TODOS",
+    "titulo_atual": "MERCEDES-BENZ - ONIBUS URBANOS TODOS",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ONIBUS URBANOS TODOS",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-onibus-e-micro-urbanos",
+    "slug": "mercedes-benz-onibus-e-micro-urbanos",
     "url": null
   },
   {
@@ -7281,22 +7281,22 @@
   },
   {
     "id_wp": 29979,
-    "titulo_atual": "MERCEDES-BENS - 2217",
+    "titulo_atual": "MERCEDES-BENZ - 2217",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "2217",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2217",
+    "slug": "mercedes-benz-2217",
     "url": null
   },
   {
     "id_wp": 30005,
-    "titulo_atual": "MERCEDES-BENS - 1317",
+    "titulo_atual": "MERCEDES-BENZ - 1317",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1317",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1317-1318",
+    "slug": "mercedes-benz-1317-1318",
     "url": null
   },
   {
@@ -7371,32 +7371,32 @@
   },
   {
     "id_wp": 30253,
-    "titulo_atual": "MERCEDES-BENS - 1518",
+    "titulo_atual": "MERCEDES-BENZ - 1518",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1518",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1518",
+    "slug": "mercedes-benz-1518",
     "url": null
   },
   {
     "id_wp": 30267,
-    "titulo_atual": "MERCEDES-BENS - 1520",
+    "titulo_atual": "MERCEDES-BENZ - 1520",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1520",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1520",
+    "slug": "mercedes-benz-1520",
     "url": null
   },
   {
     "id_wp": 30270,
-    "titulo_atual": "MERCEDES-BENS - 1113",
+    "titulo_atual": "MERCEDES-BENZ - 1113",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1113",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1113",
+    "slug": "mercedes-benz-1113",
     "url": null
   },
   {
@@ -7411,42 +7411,42 @@
   },
   {
     "id_wp": 30356,
-    "titulo_atual": "MERCEDES-BENS - 1114",
+    "titulo_atual": "MERCEDES-BENZ - 1114",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1114",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1114",
+    "slug": "mercedes-benz-1114",
     "url": null
   },
   {
     "id_wp": 30377,
-    "titulo_atual": "MERCEDES-BENS - 1314",
+    "titulo_atual": "MERCEDES-BENZ - 1314",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1314",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1314",
+    "slug": "mercedes-benz-1314",
     "url": null
   },
   {
     "id_wp": 30391,
-    "titulo_atual": "MERCEDES-BENS - 1318 ANTIGO",
+    "titulo_atual": "MERCEDES-BENZ - 1318 ANTIGO",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1318",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1318",
+    "slug": "mercedes-benz-1318",
     "url": null
   },
   {
     "id_wp": 30417,
-    "titulo_atual": "MERCEDES-BENS - ACTROS 2646 IMPORTADO",
+    "titulo_atual": "MERCEDES-BENZ - ACTROS 2646 IMPORTADO",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACTROS 2646",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-actros-2646-v6-importado",
+    "slug": "mercedes-benz-actros-2646-v6-importado",
     "url": null
   },
   {
@@ -7601,22 +7601,22 @@
   },
   {
     "id_wp": 30941,
-    "titulo_atual": "MERCEDES-BENS - AXOR 2540",
+    "titulo_atual": "MERCEDES-BENZ - AXOR 2540",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AXOR 2540",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-axor-2540",
+    "slug": "mercedes-benz-axor-2540",
     "url": null
   },
   {
     "id_wp": 30963,
-    "titulo_atual": "MERCEDES-BENS - AXOR 2640",
+    "titulo_atual": "MERCEDES-BENZ - AXOR 2640",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AXOR 2640",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-axor-2644",
+    "slug": "mercedes-benz-axor-2644",
     "url": null
   },
   {
@@ -7751,22 +7751,22 @@
   },
   {
     "id_wp": 31359,
-    "titulo_atual": "MERCEDES BENS - AXOR 1933",
+    "titulo_atual": "MERCEDES-BENZ - AXOR 1933",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AXOR 1933",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-axor-1933",
+    "slug": "mercedes-benz-axor-1933",
     "url": null
   },
   {
     "id_wp": 31384,
-    "titulo_atual": "MERCEDES BENS - AXOR 2831",
+    "titulo_atual": "MERCEDES-BENZ - AXOR 2831",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AXOR 2831",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-axor-2831",
+    "slug": "mercedes-benz-axor-2831",
     "url": null
   },
   {
@@ -7961,12 +7961,12 @@
   },
   {
     "id_wp": 31963,
-    "titulo_atual": "MERCEDES-BENS - 1519",
+    "titulo_atual": "MERCEDES-BENZ - 1519",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1519",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1519",
+    "slug": "mercedes-benz-1519",
     "url": null
   },
   {
@@ -8411,12 +8411,12 @@
   },
   {
     "id_wp": 33346,
-    "titulo_atual": "MERCEDES-BENS - SLK-250",
+    "titulo_atual": "MERCEDES-BENZ - SLK-250",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "SLK 250",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-slk-250",
+    "slug": "mercedes-benz-slk-250",
     "url": null
   },
   {
@@ -8461,32 +8461,32 @@
   },
   {
     "id_wp": 33531,
-    "titulo_atual": "MERCEDES-BENS - ACTROS 2548",
+    "titulo_atual": "MERCEDES-BENZ - ACTROS 2548",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACTROS 2548",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-actros-2548",
+    "slug": "mercedes-benz-actros-2548",
     "url": null
   },
   {
     "id_wp": 33566,
-    "titulo_atual": "MERCEDES-BENS - ACTROS 2653 S",
+    "titulo_atual": "MERCEDES-BENZ - ACTROS 2653 S",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACTROS 2653 S",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-actros-2653",
+    "slug": "mercedes-benz-actros-2653",
     "url": null
   },
   {
     "id_wp": 33583,
-    "titulo_atual": "MERCEDES-BENS - ACTROS 2651S",
+    "titulo_atual": "MERCEDES-BENZ - ACTROS 2651S",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACTROS 2651S",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-actros-2651s",
+    "slug": "mercedes-benz-actros-2651s",
     "url": null
   },
   {
@@ -8551,12 +8551,12 @@
   },
   {
     "id_wp": 33754,
-    "titulo_atual": "MERCEDES-BENS - CLS 53 AMG",
+    "titulo_atual": "MERCEDES-BENZ - CLS 53 AMG",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "CLS 53 AMG",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-cls-53-amg",
+    "slug": "mercedes-benz-cls-53-amg",
     "url": null
   },
   {
@@ -8571,12 +8571,12 @@
   },
   {
     "id_wp": 33896,
-    "titulo_atual": "MERCEDES-BENS - 1215 C",
+    "titulo_atual": "MERCEDES-BENZ - 1215 C",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1215 C",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1215",
+    "slug": "mercedes-benz-1215",
     "url": null
   },
   {
@@ -8621,22 +8621,22 @@
   },
   {
     "id_wp": 34097,
-    "titulo_atual": "MERCEDES-BENS - AMG CLA 45",
+    "titulo_atual": "MERCEDES-BENZ - AMG CLA 45",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AMG CLA 45",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-amg-cla-45",
+    "slug": "mercedes-benz-amg-cla-45",
     "url": null
   },
   {
     "id_wp": 34124,
-    "titulo_atual": "MERCEDES-BENS - C-280 (NOVAS)",
+    "titulo_atual": "MERCEDES-BENZ - C-280 (NOVAS)",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "C-280",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-c-280-novas",
+    "slug": "mercedes-benz-c-280-novas",
     "url": null
   },
   {
@@ -8661,52 +8661,52 @@
   },
   {
     "id_wp": 34187,
-    "titulo_atual": "MERCEDES-BENS - C-180 NACIONAL",
+    "titulo_atual": "MERCEDES-BENZ - C-180 NACIONAL",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "C-180",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-c-180-nacional",
+    "slug": "mercedes-benz-c-180-nacional",
     "url": null
   },
   {
     "id_wp": 34239,
-    "titulo_atual": "MERCEDES-BENS - C-200 NACIONAL",
+    "titulo_atual": "MERCEDES-BENZ - C-200 NACIONAL",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "C-200",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-c-200-nacional",
+    "slug": "mercedes-benz-c-200-nacional",
     "url": null
   },
   {
     "id_wp": 34258,
-    "titulo_atual": "MERCEDES-BENS - C-300 NACIONAL",
+    "titulo_atual": "MERCEDES-BENZ - C-300 NACIONAL",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "C-300",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-c-300-nacional",
+    "slug": "mercedes-benz-c-300-nacional",
     "url": null
   },
   {
     "id_wp": 34279,
-    "titulo_atual": "MERCEDES-BENS - L-LS 2638",
+    "titulo_atual": "MERCEDES-BENZ - L-LS 2638",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "L-LS 2638",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-l-2638",
+    "slug": "mercedes-benz-l-2638",
     "url": null
   },
   {
     "id_wp": 34324,
-    "titulo_atual": "MERCEDES-BENS - C-250 NACIONAL",
+    "titulo_atual": "MERCEDES-BENZ - C-250 NACIONAL",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "C-250",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-c-250-nacional",
+    "slug": "mercedes-benz-c-250-nacional",
     "url": null
   },
   {
@@ -8751,22 +8751,22 @@
   },
   {
     "id_wp": 34444,
-    "titulo_atual": "MERCEDES-BENS - AMG 63S",
+    "titulo_atual": "MERCEDES-BENZ - AMG 63S",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AMG 63S",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-amg-63s",
+    "slug": "mercedes-benz-amg-63s",
     "url": null
   },
   {
     "id_wp": 34466,
-    "titulo_atual": "MERCEDES-BENS - AMG-63GT",
+    "titulo_atual": "MERCEDES-BENZ - AMG-63GT",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AMG-63GT",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-amg-gt",
+    "slug": "mercedes-benz-amg-gt",
     "url": null
   },
   {
@@ -8841,12 +8841,12 @@
   },
   {
     "id_wp": 34646,
-    "titulo_atual": "MERCEDES-BENS - MARCO-POLO TODOS MODELOS",
+    "titulo_atual": "MERCEDES-BENZ - MARCO-POLO TODOS MODELOS",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "MARCO-POLO",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-marco-polo-todos-modelos",
+    "slug": "mercedes-benz-marco-polo-todos-modelos",
     "url": null
   },
   {
@@ -8911,22 +8911,22 @@
   },
   {
     "id_wp": 34805,
-    "titulo_atual": "MERCEDES-BENS - 1218",
+    "titulo_atual": "MERCEDES-BENZ - 1218",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1218",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1218",
+    "slug": "mercedes-benz-1218",
     "url": null
   },
   {
     "id_wp": 34833,
-    "titulo_atual": "MERCEDES-BENS - 1214",
+    "titulo_atual": "MERCEDES-BENZ - 1214",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1214",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1214",
+    "slug": "mercedes-benz-1214",
     "url": null
   },
   {
@@ -8971,12 +8971,12 @@
   },
   {
     "id_wp": 34963,
-    "titulo_atual": "MERCEDES-BENS - LS 1938",
+    "titulo_atual": "MERCEDES-BENZ - LS 1938",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "LS 1938",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-ls-1938",
+    "slug": "mercedes-benz-ls-1938",
     "url": null
   },
   {
@@ -9061,32 +9061,32 @@
   },
   {
     "id_wp": 35131,
-    "titulo_atual": "MERCEDES-BENS - ATEGO - 2730 NOVO",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO - 2730 NOVO",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO - 2730",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-2730-novo",
+    "slug": "mercedes-benz-atego-2730-novo",
     "url": null
   },
   {
     "id_wp": 35171,
-    "titulo_atual": "MERCEDES-BENS - ATEGO-3033",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO-3033",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO-3033",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-3033",
+    "slug": "mercedes-benz-atego-3033",
     "url": null
   },
   {
     "id_wp": 35199,
-    "titulo_atual": "MERCEDES-BENS - OF 1519 ÔNIBUS",
+    "titulo_atual": "MERCEDES-BENZ - OF 1519 ÔNIBUS",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "OF 1519 ÔNIBUS",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-of-1519-onibus",
+    "slug": "mercedes-benz-of-1519-onibus",
     "url": null
   },
   {
@@ -9151,12 +9151,12 @@
   },
   {
     "id_wp": 35382,
-    "titulo_atual": "MERCEDES-BENS - AXOR 3344 NOVO",
+    "titulo_atual": "MERCEDES-BENZ - AXOR 3344 NOVO",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AXOR 3344",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-axor-3344-novo",
+    "slug": "mercedes-benz-axor-3344-novo",
     "url": null
   },
   {
@@ -9211,32 +9211,32 @@
   },
   {
     "id_wp": 35498,
-    "titulo_atual": "MERCEDES-BENS - GLA 200 NACIONAL",
+    "titulo_atual": "MERCEDES-BENZ - GLA 200 NACIONAL",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "GLA 200",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-gla-200-nacional",
+    "slug": "mercedes-benz-gla-200-nacional",
     "url": null
   },
   {
     "id_wp": 35539,
-    "titulo_atual": "MERCEDES-BENS - GLA 250 NACIONAL",
+    "titulo_atual": "MERCEDES-BENZ - GLA 250 NACIONAL",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "GLA 250",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-gla-250-nacional",
+    "slug": "mercedes-benz-gla-250-nacional",
     "url": null
   },
   {
     "id_wp": 35541,
-    "titulo_atual": "MERCEDES-BENS - IMP-GLA 250",
+    "titulo_atual": "MERCEDES-BENZ - IMP-GLA 250",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "IMP-GLA 250",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-imp-gla-250",
+    "slug": "mercedes-benz-imp-gla-250",
     "url": null
   },
   {
@@ -9351,12 +9351,12 @@
   },
   {
     "id_wp": 35792,
-    "titulo_atual": "MERCEDES-BENS - ATEGO-2425",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO-2425",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO-2425",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-2425",
+    "slug": "mercedes-benz-atego-2425",
     "url": null
   },
   {
@@ -9461,22 +9461,22 @@
   },
   {
     "id_wp": 36162,
-    "titulo_atual": "MERCEDES-BENS - 180D",
+    "titulo_atual": "MERCEDES-BENZ - 180D",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "180D",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-180d",
+    "slug": "mercedes-benz-180d",
     "url": null
   },
   {
     "id_wp": 36191,
-    "titulo_atual": "MERCEDES-BENS - A-190",
+    "titulo_atual": "MERCEDES-BENZ - A-190",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "A-190",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-a190",
+    "slug": "mercedes-benz-a190",
     "url": null
   },
   {
@@ -9491,62 +9491,62 @@
   },
   {
     "id_wp": 36229,
-    "titulo_atual": "MERCEDES-BENS - 2013",
+    "titulo_atual": "MERCEDES-BENZ - 2013",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "",
     "ano_inicio_atual": 2013,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2013",
+    "slug": "mercedes-benz-2013",
     "url": null
   },
   {
     "id_wp": 36252,
-    "titulo_atual": "MERCEDES-BENS - 2214",
+    "titulo_atual": "MERCEDES-BENZ - 2214",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "2214",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2214",
+    "slug": "mercedes-benz-2214",
     "url": null
   },
   {
     "id_wp": 36253,
-    "titulo_atual": "MERCEDES-BENS - 2216",
+    "titulo_atual": "MERCEDES-BENZ - 2216",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "2216",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2216",
+    "slug": "mercedes-benz-2216",
     "url": null
   },
   {
     "id_wp": 36294,
-    "titulo_atual": "MERCEDES-BENS - 2217",
+    "titulo_atual": "MERCEDES-BENZ - 2217",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "2217",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2217-2",
+    "slug": "mercedes-benz-2217-2",
     "url": null
   },
   {
     "id_wp": 36305,
-    "titulo_atual": "MERCEDES-BENS - 2219",
+    "titulo_atual": "MERCEDES-BENZ - 2219",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "2219",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2219",
+    "slug": "mercedes-benz-2219",
     "url": null
   },
   {
     "id_wp": 36320,
-    "titulo_atual": "MERCEDES-BENS - 2220",
+    "titulo_atual": "MERCEDES-BENZ - 2220",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "2220",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2220",
+    "slug": "mercedes-benz-2220",
     "url": null
   },
   {
@@ -9583,7 +9583,7 @@
     "id_wp": 36392,
     "titulo_atual": "IVECO - TECTOR 24.280",
     "marca_atual": "IVECO",
-    "modelo_atual": "TECTOR 24.280",
+    "modelo_atual": "TECTOR 24-280",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "iveco-tector-24-280",
@@ -9593,7 +9593,7 @@
     "id_wp": 36412,
     "titulo_atual": "IVECO - TECTOR 27.320",
     "marca_atual": "IVECO",
-    "modelo_atual": "TECTOR 27.320",
+    "modelo_atual": "TECTOR 27-320",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "iveco-tector-27-320",
@@ -9611,12 +9611,12 @@
   },
   {
     "id_wp": 36457,
-    "titulo_atual": "MERCEDES-BENS - 1618",
+    "titulo_atual": "MERCEDES-BENZ - 1618",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1618",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1618",
+    "slug": "mercedes-benz-1618",
     "url": null
   },
   {
@@ -9671,12 +9671,12 @@
   },
   {
     "id_wp": 36718,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 1317",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 1317",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 1317",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-accelo-1317",
+    "slug": "mercedes-benz-accelo-1317",
     "url": null
   },
   {
@@ -9844,8 +9844,8 @@
     "titulo_atual": "TOYOTA - COROLA G5",
     "marca_atual": "TOYOTA",
     "modelo_atual": "COROLA G5",
-    "ano_inicio_atual": null,
-    "ano_fim_atual": null,
+    "ano_inicio_atual": 2020,
+    "ano_fim_atual": 2026,
     "slug": "toyota-corola-g5",
     "url": null
   },
@@ -9901,72 +9901,72 @@
   },
   {
     "id_wp": 37452,
-    "titulo_atual": "MERCEDES-BENS - 2423",
+    "titulo_atual": "MERCEDES-BENZ - 2423",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "2423",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2423",
+    "slug": "mercedes-benz-2423",
     "url": null
   },
   {
     "id_wp": 37485,
-    "titulo_atual": "MERCEDES-BENS - 2428",
+    "titulo_atual": "MERCEDES-BENZ - 2428",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "2428",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2428",
+    "slug": "mercedes-benz-2428",
     "url": null
   },
   {
     "id_wp": 37497,
-    "titulo_atual": "MERCEDES-BENS - O 400RSD",
+    "titulo_atual": "MERCEDES-BENZ - O 400RSD",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "O 400RSD",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-onibus-modelos-urbano",
+    "slug": "mercedes-benz-onibus-modelos-urbano",
     "url": null
   },
   {
     "id_wp": 37522,
-    "titulo_atual": "MERCEDES-BENS - O 400RSE",
+    "titulo_atual": "MERCEDES-BENZ - O 400RSE",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "O 400RSE",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-o-400rse",
+    "slug": "mercedes-benz-o-400rse",
     "url": null
   },
   {
     "id_wp": 37525,
-    "titulo_atual": "MERCEDES-BENS - M.POLO GVR",
+    "titulo_atual": "MERCEDES-BENZ - M.POLO GVR",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "M.POLO GVR",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-m-polo-gvr",
+    "slug": "mercedes-benz-m-polo-gvr",
     "url": null
   },
   {
     "id_wp": 37544,
-    "titulo_atual": "MERCEDES-BENS - ATRON 2729",
+    "titulo_atual": "MERCEDES-BENZ - ATRON 2729",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATRON 2729",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atron-2729",
+    "slug": "mercedes-benz-atron-2729",
     "url": null
   },
   {
     "id_wp": 37557,
-    "titulo_atual": "MERCEDES-BENS - 2726",
+    "titulo_atual": "MERCEDES-BENZ - 2726",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "2726",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2726",
+    "slug": "mercedes-benz-2726",
     "url": null
   },
   {
@@ -10051,12 +10051,12 @@
   },
   {
     "id_wp": 37742,
-    "titulo_atual": "MERCEDES-BENS - IMPORTADO A 200",
+    "titulo_atual": "MERCEDES-BENZ - IMPORTADO A 200",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "A 200",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-importado-a-200",
+    "slug": "mercedes-benz-importado-a-200",
     "url": null
   },
   {
@@ -10211,22 +10211,22 @@
   },
   {
     "id_wp": 38065,
-    "titulo_atual": "MERCEDES-BENS - 1935",
+    "titulo_atual": "MERCEDES-BENZ - 1935",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "",
     "ano_inicio_atual": 1935,
     "ano_fim_atual": 1935,
-    "slug": "mercedes-bens-1935",
+    "slug": "mercedes-benz-1935",
     "url": null
   },
   {
     "id_wp": 38107,
-    "titulo_atual": "MERCEDES-BENS - 1941",
+    "titulo_atual": "MERCEDES-BENZ - 1941",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "",
     "ano_inicio_atual": 1941,
     "ano_fim_atual": 1941,
-    "slug": "mercedes-bens-1941",
+    "slug": "mercedes-benz-1941",
     "url": null
   },
   {
@@ -10236,17 +10236,17 @@
     "modelo_atual": "1418",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1418",
+    "slug": "mercedes-benz-1418",
     "url": null
   },
   {
     "id_wp": 38196,
-    "titulo_atual": "MERCEDES-BENS - 1315 OF",
+    "titulo_atual": "MERCEDES-BENZ - 1315 OF",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1315 OF",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1315-todos",
+    "slug": "mercedes-benz-1315-todos",
     "url": null
   },
   {
@@ -10431,12 +10431,12 @@
   },
   {
     "id_wp": 38705,
-    "titulo_atual": "MERCEDES-BENS - GLB 200",
+    "titulo_atual": "MERCEDES-BENZ - GLB 200",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "GLB 200",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-glb-200",
+    "slug": "mercedes-benz-glb-200",
     "url": null
   },
   {
@@ -11541,12 +11541,12 @@
   },
   {
     "id_wp": 41570,
-    "titulo_atual": "MERCEDES-BENS - O500 RSD 2438",
+    "titulo_atual": "MERCEDES-BENZ - O500 RSD 2438",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "O500 RSD 2438",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-o500-rsd-2438",
+    "slug": "mercedes-benz-o500-rsd-2438",
     "url": null
   },
   {
@@ -11631,22 +11631,22 @@
   },
   {
     "id_wp": 41800,
-    "titulo_atual": "MERCEDES-BENS - ATEGO 3133",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO 3133",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO 3133",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-3133",
+    "slug": "mercedes-benz-atego-3133",
     "url": null
   },
   {
     "id_wp": 41812,
-    "titulo_atual": "MERCEDES-BENS - AXOR 2644",
+    "titulo_atual": "MERCEDES-BENZ - AXOR 2644",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AXOR 2644",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-axor-2644-2",
+    "slug": "mercedes-benz-axor-2644-2",
     "url": null
   },
   {
@@ -11881,12 +11881,12 @@
   },
   {
     "id_wp": 42592,
-    "titulo_atual": "MERCEDES-BENS - 1313",
+    "titulo_atual": "MERCEDES-BENZ - 1313",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1313",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1313",
+    "slug": "mercedes-benz-1313",
     "url": null
   },
   {
@@ -12011,12 +12011,12 @@
   },
   {
     "id_wp": 42915,
-    "titulo_atual": "MERCEDES-BENS - 2213",
+    "titulo_atual": "MERCEDES-BENZ - 2213",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "2213",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-2213",
+    "slug": "mercedes-benz-2213",
     "url": null
   },
   {
@@ -12381,12 +12381,12 @@
   },
   {
     "id_wp": 43773,
-    "titulo_atual": "MERCEDES BENS - ATEGO 1719 2025/2026",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO 1719 2025/2026",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO 1719",
     "ano_inicio_atual": 2025,
     "ano_fim_atual": 2026,
-    "slug": "mercedes-bens-atego-1719-2025",
+    "slug": "mercedes-benz-atego-1719-2025",
     "url": null
   },
   {
@@ -12401,182 +12401,182 @@
   },
   {
     "id_wp": 43851,
-    "titulo_atual": "MERCEDES-BENS - 1525",
+    "titulo_atual": "MERCEDES-BENZ - 1525",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1525",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1525",
+    "slug": "mercedes-benz-1525",
     "url": null
   },
   {
     "id_wp": 43873,
-    "titulo_atual": "MERCEDES-BENS - 1524",
+    "titulo_atual": "MERCEDES-BENZ - 1524",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1524",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1524",
+    "slug": "mercedes-benz-1524",
     "url": null
   },
   {
     "id_wp": 43890,
-    "titulo_atual": "MERCEDES-BENS - LP 321",
+    "titulo_atual": "MERCEDES-BENZ - LP 321",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "LP 321",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-lp-321",
+    "slug": "mercedes-benz-lp-321",
     "url": null
   },
   {
     "id_wp": 43896,
-    "titulo_atual": "MERCEDES-BENS - 1517",
+    "titulo_atual": "MERCEDES-BENZ - 1517",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1517",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1517",
+    "slug": "mercedes-benz-1517",
     "url": null
   },
   {
     "id_wp": 43919,
-    "titulo_atual": "MERCEDES-BENS - 1111",
+    "titulo_atual": "MERCEDES-BENZ - 1111",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1111",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1111",
+    "slug": "mercedes-benz-1111",
     "url": null
   },
   {
     "id_wp": 43938,
-    "titulo_atual": "MERCEDES-BENS - ÔNIBUS 321",
+    "titulo_atual": "MERCEDES-BENZ - ÔNIBUS 321",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ÔNIBUS 321",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-onibus-321",
+    "slug": "mercedes-benz-onibus-321",
     "url": null
   },
   {
     "id_wp": 43959,
-    "titulo_atual": "MERCEDES-BENS - 1933",
+    "titulo_atual": "MERCEDES-BENZ - 1933",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "",
     "ano_inicio_atual": 1933,
     "ano_fim_atual": 1933,
-    "slug": "mercedes-bens-1933",
+    "slug": "mercedes-benz-1933",
     "url": null
   },
   {
     "id_wp": 43975,
-    "titulo_atual": "MERCEDES-BENS - 1934",
+    "titulo_atual": "MERCEDES-BENZ - 1934",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "",
     "ano_inicio_atual": 1934,
     "ano_fim_atual": 1934,
-    "slug": "mercedes-bens-1934",
+    "slug": "mercedes-benz-1934",
     "url": null
   },
   {
     "id_wp": 43981,
-    "titulo_atual": "MERCEDES-BENS - 914",
+    "titulo_atual": "MERCEDES-BENZ - 914",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "914",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-914",
+    "slug": "mercedes-benz-914",
     "url": null
   },
   {
     "id_wp": 44000,
-    "titulo_atual": "MERCEDES-BENS - 709",
+    "titulo_atual": "MERCEDES-BENZ - 709",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "709",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-709",
+    "slug": "mercedes-benz-709",
     "url": null
   },
   {
     "id_wp": 44015,
-    "titulo_atual": "MERCEDES-BENS - 1620 ÔNIBUS IMPORTADO",
+    "titulo_atual": "MERCEDES-BENZ - 1620 ÔNIBUS IMPORTADO",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1620 ÔNIBUS",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1620-of-importado",
+    "slug": "mercedes-benz-1620-of-importado",
     "url": null
   },
   {
     "id_wp": 44036,
-    "titulo_atual": "MERCEDES-BENS - 712",
+    "titulo_atual": "MERCEDES-BENZ - 712",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "712",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-712",
+    "slug": "mercedes-benz-712",
     "url": null
   },
   {
     "id_wp": 44053,
-    "titulo_atual": "MERCEDES-BENS - 712 C",
+    "titulo_atual": "MERCEDES-BENZ - 712 C",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "712 C",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-712-c",
+    "slug": "mercedes-benz-712-c",
     "url": null
   },
   {
     "id_wp": 44078,
-    "titulo_atual": "MERCEDES-BENS - 914 C",
+    "titulo_atual": "MERCEDES-BENZ - 914 C",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "914 C",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-914-c",
+    "slug": "mercedes-benz-914-c",
     "url": null
   },
   {
     "id_wp": 44092,
-    "titulo_atual": "MERCEDES-BENS - SENIOR",
+    "titulo_atual": "MERCEDES-BENZ - SENIOR",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "SENIOR",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-senior",
+    "slug": "mercedes-benz-senior",
     "url": null
   },
   {
     "id_wp": 44112,
-    "titulo_atual": "MERCEDES-BENS - LO 915",
+    "titulo_atual": "MERCEDES-BENZ - LO 915",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "LO 915",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-lo-915",
+    "slug": "mercedes-benz-lo-915",
     "url": null
   },
   {
     "id_wp": 44117,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 915 C",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 915 C",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 915 C",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-accelo-915-c",
+    "slug": "mercedes-benz-accelo-915-c",
     "url": null
   },
   {
     "id_wp": 44158,
-    "titulo_atual": "MERCEDES-BENS - L 2638",
+    "titulo_atual": "MERCEDES-BENZ - L 2638",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "L 2638",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-l-2638-2",
+    "slug": "mercedes-benz-l-2638-2",
     "url": null
   },
   {
@@ -12601,12 +12601,12 @@
   },
   {
     "id_wp": 44248,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 1316",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 1316",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 1316",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-accelo-1316",
+    "slug": "mercedes-benz-accelo-1316",
     "url": null
   },
   {
@@ -12651,42 +12651,42 @@
   },
   {
     "id_wp": 44379,
-    "titulo_atual": "MERCEDES-BENS - AROCS 4151",
+    "titulo_atual": "MERCEDES-BENZ - AROCS 4151",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AROCS 4151",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-arocs-4151",
+    "slug": "mercedes-benz-arocs-4151",
     "url": null
   },
   {
     "id_wp": 44402,
-    "titulo_atual": "MERCEDES-BENS - AROCS 3351",
+    "titulo_atual": "MERCEDES-BENZ - AROCS 3351",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "AROCS 3351",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-arocs-3351",
+    "slug": "mercedes-benz-arocs-3351",
     "url": null
   },
   {
     "id_wp": 44425,
-    "titulo_atual": "MERCEDES-BENS - ACTROS 2655",
+    "titulo_atual": "MERCEDES-BENZ - ACTROS 2655",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACTROS 2655",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-actros-2655",
+    "slug": "mercedes-benz-actros-2655",
     "url": null
   },
   {
     "id_wp": 44440,
-    "titulo_atual": "MERCEDES-BENS - ACTROS 2546",
+    "titulo_atual": "MERCEDES-BENZ - ACTROS 2546",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACTROS 2546",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-actros-2546",
+    "slug": "mercedes-benz-actros-2546",
     "url": null
   },
   {
@@ -13071,12 +13071,12 @@
   },
   {
     "id_wp": 45414,
-    "titulo_atual": "MERCEDES-BENS - 371 RS",
+    "titulo_atual": "MERCEDES-BENZ - 371 RS",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "371 RS",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-371-rs",
+    "slug": "mercedes-benz-371-rs",
     "url": null
   },
   {
@@ -13111,22 +13111,22 @@
   },
   {
     "id_wp": 45569,
-    "titulo_atual": "MERCEDES-BENS - ACTROS 3351",
+    "titulo_atual": "MERCEDES-BENZ - ACTROS 3351",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACTROS 3351",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-actros-3351",
+    "slug": "mercedes-benz-actros-3351",
     "url": null
   },
   {
     "id_wp": 45585,
-    "titulo_atual": "MERCEDES-BENS - ACTROS 2045",
+    "titulo_atual": "MERCEDES-BENZ - ACTROS 2045",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACTROS 2045",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-actros-2045",
+    "slug": "mercedes-benz-actros-2045",
     "url": null
   },
   {
@@ -13141,12 +13141,12 @@
   },
   {
     "id_wp": 45637,
-    "titulo_atual": "MERCEDES-BENS - C 300",
+    "titulo_atual": "MERCEDES-BENZ - C 300",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "C 300",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-c-300",
+    "slug": "mercedes-benz-c-300",
     "url": null
   },
   {
@@ -13201,22 +13201,22 @@
   },
   {
     "id_wp": 45771,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 1017 2024",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 1017 2024",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 1017",
     "ano_inicio_atual": 2024,
     "ano_fim_atual": 2024,
-    "slug": "mercedes-bens-accelo-1017-novo",
+    "slug": "mercedes-benz-accelo-1017-novo",
     "url": null
   },
   {
     "id_wp": 45790,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 817 G1",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 817 G1",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 817 G1",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-accelo-817-g1",
+    "slug": "mercedes-benz-accelo-817-g1",
     "url": null
   },
   {
@@ -13301,12 +13301,12 @@
   },
   {
     "id_wp": 45931,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 1016 NOVO",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 1016 NOVO",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 1016",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-accelo-1016-novo",
+    "slug": "mercedes-benz-accelo-1016-novo",
     "url": null
   },
   {
@@ -13511,12 +13511,12 @@
   },
   {
     "id_wp": 46426,
-    "titulo_atual": "MERCEDES-BENS - ATEGO-3033 G2",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO-3033 G2",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO-3033 G2",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-3033-g2",
+    "slug": "mercedes-benz-atego-3033-g2",
     "url": null
   },
   {
@@ -13526,7 +13526,7 @@
     "modelo_atual": "ATEGO 2429 G2",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-2429-g2",
+    "slug": "mercedes-benz-atego-2429-g2",
     "url": null
   },
   {
@@ -13691,12 +13691,12 @@
   },
   {
     "id_wp": 46819,
-    "titulo_atual": "MERCEDES-BENS - ATEGO-3330",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO-3330",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO-3330",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-3330",
+    "slug": "mercedes-benz-atego-3330",
     "url": null
   },
   {
@@ -13821,22 +13821,22 @@
   },
   {
     "id_wp": 47142,
-    "titulo_atual": "MERCEDES-BENS - ACTROS 2651S NOVO",
+    "titulo_atual": "MERCEDES-BENZ - ACTROS 2651S NOVO",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACTROS 2651S",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-actros-2651s-novo",
+    "slug": "mercedes-benz-actros-2651s-novo",
     "url": null
   },
   {
     "id_wp": 47159,
-    "titulo_atual": "MERCEDES-BENS - ACTROS 2548S",
+    "titulo_atual": "MERCEDES-BENZ - ACTROS 2548S",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACTROS 2548S",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-actros-2548s",
+    "slug": "mercedes-benz-actros-2548s",
     "url": null
   },
   {
@@ -14171,12 +14171,12 @@
   },
   {
     "id_wp": 47978,
-    "titulo_atual": "MERCEDES-BENS - 1620 OF ÔNIBUS",
+    "titulo_atual": "MERCEDES-BENZ - 1620 OF ÔNIBUS",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "1620 OF ÔNIBUS",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-1620-of-onibus",
+    "slug": "mercedes-benz-1620-of-onibus",
     "url": null
   },
   {
@@ -14276,7 +14276,7 @@
     "modelo_atual": "ATEGO 2429",
     "ano_inicio_atual": 2025,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-2429-2025",
+    "slug": "mercedes-benz-atego-2429-2025",
     "url": null
   },
   {
@@ -14331,12 +14331,12 @@
   },
   {
     "id_wp": 48380,
-    "titulo_atual": "MERCEDES BENS - OF 1721 ONIBUS",
+    "titulo_atual": "MERCEDES-BENZ - OF 1721 ONIBUS",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "OF 1721 ONIBUS",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-of-1721-onibus",
+    "slug": "mercedes-benz-of-1721-onibus",
     "url": null
   },
   {
@@ -14951,12 +14951,12 @@
   },
   {
     "id_wp": 49698,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 1017 2025",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 1017 2025",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 1017",
     "ano_inicio_atual": 2025,
     "ano_fim_atual": 2025,
-    "slug": "mercedes-bens-accelo-1017-2025",
+    "slug": "mercedes-benz-accelo-1017-2025",
     "url": null
   },
   {
@@ -15401,12 +15401,12 @@
   },
   {
     "id_wp": 50730,
-    "titulo_atual": "MERCEDES-BENS - ACCELO 1017 2026",
+    "titulo_atual": "MERCEDES-BENZ - ACCELO 1017 2026",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ACCELO 1017",
     "ano_inicio_atual": 2026,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-accelo-1017-2026",
+    "slug": "mercedes-benz-accelo-1017-2026",
     "url": null
   },
   {
@@ -15481,22 +15481,22 @@
   },
   {
     "id_wp": 50965,
-    "titulo_atual": "MERCEDES BENS - ATEGO 3030 2025",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO 3030 2025",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO 3030",
     "ano_inicio_atual": 2025,
     "ano_fim_atual": 2025,
-    "slug": "mercedes-bens-atego-3030-2025",
+    "slug": "mercedes-benz-atego-3030-2025",
     "url": null
   },
   {
     "id_wp": 50988,
-    "titulo_atual": "MERCEDES-BENS - ATEGO-3033 2025",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO-3033 2025",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO-3033",
     "ano_inicio_atual": 2025,
     "ano_fim_atual": 2025,
-    "slug": "mercedes-bens-atego-3033-2025",
+    "slug": "mercedes-benz-atego-3033-2025",
     "url": null
   },
   {
@@ -15751,12 +15751,12 @@
   },
   {
     "id_wp": 51722,
-    "titulo_atual": "MERCEDES BENS - ATEGO 1726",
+    "titulo_atual": "MERCEDES-BENZ - ATEGO 1726",
     "marca_atual": "MERCEDES-BENZ",
     "modelo_atual": "ATEGO 1726",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
-    "slug": "mercedes-bens-atego-1726-2025",
+    "slug": "mercedes-benz-atego-1726-2025",
     "url": null
   },
   {
