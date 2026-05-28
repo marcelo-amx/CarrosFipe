@@ -13,7 +13,7 @@
     "id_wp": 108,
     "titulo_atual": "AUDI A3 - S3",
     "marca_atual": "AUDI",
-    "modelo_atual": "A3 - S3",
+    "modelo_atual": "A3, S3",
     "ano_inicio_atual": 2013,
     "ano_fim_atual": 2014,
     "slug": "audi-a3-2-0-tfsi-2013-2014",
@@ -33,7 +33,7 @@
     "id_wp": 152,
     "titulo_atual": "ASTON MARTIN DB4 - DB5 e DB6",
     "marca_atual": "ASTON MARTIN",
-    "modelo_atual": "DB4 - DB5 e DB6",
+    "modelo_atual": "DB4, DB5, DB6",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "aston-martin-v8-vantage",
@@ -1403,7 +1403,7 @@
     "id_wp": 6051,
     "titulo_atual": "MERCEDES-BENZ - I/M C-200 CLA-200",
     "marca_atual": "MERCEDES-BENZ",
-    "modelo_atual": "C-200 CLA-200",
+    "modelo_atual": "C-200, CLA-200",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "mercedes-a200-2020",
@@ -2143,7 +2143,7 @@
     "id_wp": 7108,
     "titulo_atual": "Reboques e Semi reboques Pastre.",
     "marca_atual": "Pastre",
-    "modelo_atual": "Reboques e Semi reboques",
+    "modelo_atual": "Reboques, Semi reboques",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "reboques-e-semi-reboques-pastre",
@@ -2363,7 +2363,7 @@
     "id_wp": 7666,
     "titulo_atual": "KIA - SPORTAGE MR E TURBO",
     "marca_atual": "Kia Motors",
-    "modelo_atual": "SPORTAGE MR E TURBO",
+    "modelo_atual": "SPORTAGE",
     "ano_inicio_atual": 2022,
     "ano_fim_atual": 2026,
     "slug": "imp-kia-sportage-mr-e-turbo",
@@ -3743,7 +3743,7 @@
     "id_wp": 15090,
     "titulo_atual": "TROLLER - T4 - T5",
     "marca_atual": "TROLLER",
-    "modelo_atual": "T4 - T5",
+    "modelo_atual": "T4, T5",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "troller-t4-e-t5-2",
@@ -4333,7 +4333,7 @@
     "id_wp": 17524,
     "titulo_atual": "CHERY - TIGGO 7 - 7PRO",
     "marca_atual": "Caoa Chery",
-    "modelo_atual": "TIGGO 7 - 7PRO",
+    "modelo_atual": "TIGGO 7, 7PRO",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "tiggo-7-7pro",
@@ -4363,7 +4363,7 @@
     "id_wp": 17596,
     "titulo_atual": "KAWASAKI NINJA 250 E 300 CC",
     "marca_atual": "KAWASAKI",
-    "modelo_atual": "NINJA 250 E 300 CC",
+    "modelo_atual": "NINJA 250, 300 CC",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "kawasaki-ninja-250-e-300-cc",
@@ -5203,7 +5203,7 @@
     "id_wp": 22119,
     "titulo_atual": "VW - JETTA E JETTA - VARIANT",
     "marca_atual": "VOLKSWAGEN",
-    "modelo_atual": "JETTA E JETTA - VARIANT",
+    "modelo_atual": "JETTA, JETTA VARIANT",
     "ano_inicio_atual": null,
     "ano_fim_atual": null,
     "slug": "vw-jetta-variant",
@@ -5413,7 +5413,7 @@
     "id_wp": 22947,
     "titulo_atual": "PORSCHE - CAYENNE E CAYENNE GTS",
     "marca_atual": "PORSCHE",
-    "modelo_atual": "CAYENNE E CAYENNE GTS",
+    "modelo_atual": "CAYENNE, CAYENNE GTS",
     "ano_inicio_atual": 2002,
     "ano_fim_atual": null,
     "slug": "porche-cayenne",
@@ -17878,5 +17878,100 @@
     "ano_fim_atual": 2014,
     "slug": "gm-chevrolet-camaro-2013-2014",
     "url": null
+  },
+  {
+    "id_wp": 32166,
+    "titulo_atual": "ALFA ROMEO - SPIDER",
+    "marca_atual": "ALFA ROMEO",
+    "modelo_atual": "SPIDER",
+    "slug": "alfa-romeo-spider"
+  },
+  {
+    "id_wp": 37254,
+    "titulo_atual": "TOYOYA - COROLA G3-SAPÃO 2",
+    "marca_atual": "TOYOYA",
+    "modelo_atual": "COROLA G3",
+    "slug": "toyoya-corola-g3-sapao-2"
+  },
+  {
+    "id_wp": 57195,
+    "titulo_atual": "GM-CHEVROLET - CAMARO 2015/2016",
+    "marca_atual": "GM - Chevrolet",
+    "modelo_atual": "CAMARO",
+    "ano_inicio_atual": 2015,
+    "ano_fim_atual": 2016,
+    "slug": "gm-chevrolet-camaro-2015-2016"
+  },
+  {
+    "id_wp": 57232,
+    "titulo_atual": "HONDA - CRF 1100 AFRICA TWIN",
+    "marca_atual": "HONDA",
+    "modelo_atual": "CRF 1100 AFRICA TWIN",
+    "slug": "honda-crf-1000-africa-twin"
+  },
+  {
+    "id_wp": 57268,
+    "titulo_atual": "VW - CONSTELLATION - 27-320 2026/2027",
+    "marca_atual": "VOLKSWAGEN",
+    "modelo_atual": "CONSTELLATION - 27-320",
+    "ano_inicio_atual": 2026,
+    "ano_fim_atual": 2027,
+    "slug": "vw-constellation-27-320-2026-2027"
+  },
+  {
+    "id_wp": 57291,
+    "titulo_atual": "GEELY - EX2 PRO",
+    "marca_atual": "GEELY",
+    "modelo_atual": "EX2 PRO",
+    "slug": "geely-ex2-pro"
+  },
+  {
+    "id_wp": 57321,
+    "titulo_atual": "VOLVO - EX 30",
+    "marca_atual": "VOLVO",
+    "modelo_atual": "EX 30",
+    "slug": "volvo-ex-30"
+  },
+  {
+    "id_wp": 57341,
+    "titulo_atual": "HONDA - ADV 150",
+    "marca_atual": "HONDA",
+    "modelo_atual": "ADV 150",
+    "slug": "honda-adv-150"
+  },
+  {
+    "id_wp": 57381,
+    "titulo_atual": "JAC - E-JS1 ELÉTRICO",
+    "marca_atual": "JAC",
+    "modelo_atual": "E-JS1 ELÉTRICO",
+    "slug": "jac-e-js1"
+  },
+  {
+    "id_wp": 57400,
+    "titulo_atual": "JAC - E-JS4 ELÉTRICO",
+    "marca_atual": "JAC",
+    "modelo_atual": "E-JS4 ELÉTRICO",
+    "slug": "jac-e-js4-eletrico"
+  },
+  {
+    "id_wp": 57418,
+    "titulo_atual": "JAECOO - 7 LUXURY / PRESTIGE",
+    "marca_atual": "JAECOO",
+    "modelo_atual": "7 LUXURY / PRESTIGE",
+    "slug": "jaecoo-7-luxury-prestige"
+  },
+  {
+    "id_wp": 57438,
+    "titulo_atual": "KASINSKI - COMET 650 CC",
+    "marca_atual": "KASINSKI",
+    "modelo_atual": "COMET 650 CC",
+    "slug": "kasinski-comet-650-cc"
+  },
+  {
+    "id_wp": 57457,
+    "titulo_atual": "JAC - J6",
+    "marca_atual": "JAC",
+    "modelo_atual": "J6",
+    "slug": "jac-j6"
   }
 ]
