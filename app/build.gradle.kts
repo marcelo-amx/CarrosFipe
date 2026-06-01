@@ -40,6 +40,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":app:lib"))
     implementation(libs.gson)
     implementation(libs.commons.text)
     implementation(platform(libs.androidx.compose.bom))
