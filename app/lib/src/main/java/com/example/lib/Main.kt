@@ -1,5 +1,7 @@
 package com.example.lib
 
+var zeroCount: Int = 0
+
 fun main() {
     lerCarros()
 }
@@ -20,19 +22,30 @@ private fun lerCarros() {
             processarCarro(filtrado, fipeMatches)
         }
     }
+    println("Sem nada: $zeroCount")
     println("Processamento finalizado.")
 }
 
-private fun processarCarro(filtrado: CarroFiltrado, fipeMatches: List<CarroFipe>) {
+private fun processarCarro(filtrado: CarroFiltrado, brancFipeMatches: List<CarroFipe>) {
     val fipeCodes: MutableList<String> = mutableListOf()
-
-    fipeMatches.forEach { fipe ->
-        if (fipe.model.contains(filtrado.model, ignoreCase = true)) {
+    brancFipeMatches.forEach { fipe ->
+        if (fipe.model.hasAllCharacters(filtrado.model)) {
             fipeCodes.add(fipe.id)
         }
     }
+
     filtrado.fipeCodes = fipeCodes
     if (fipeCodes.isEmpty()) {
-        println("Encontrado ${fipeCodes.size} códigos para ${filtrado.brand} ${filtrado.model}")
+        println("Encontrado ${fipeCodes.size} códigos para ${filtrado.brand}      ${filtrado.model}")
+        zeroCount++
+    }
+}
+
+fun String.hasAllCharacters(needed: String): Boolean {
+    val containerCounts = lowercase().groupingBy { it }.eachCount()
+    val neededCounts = needed.lowercase().groupingBy { it }.eachCount()
+
+    return neededCounts.all { (char, count) ->
+        containerCounts.getOrDefault(char, 0) >= count
     }
 }
