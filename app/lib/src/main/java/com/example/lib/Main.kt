@@ -37,7 +37,7 @@ private fun processarCarro(filtrado: CarroFiltrado, brancFipeMatches: List<Carro
     filtrado.fipeCodes = fipeCodes
     if (fipeCodes.isEmpty()) {
         println("Encontrado ${fipeCodes.size} códigos para ${filtrado.brand}      ${filtrado.model}")
-        zeroCount++
+        if(!filtrado.model.contains(",")) zeroCount++
     }
 }
 
