@@ -80,22 +80,24 @@ private fun String.isFlexibleMatch(otherString: String): Boolean {
 
     if (filtradoTokens.isEmpty()) return false
 
-    // Cada token do filtrado deve ser encontrado ou estar contido em algum token da FIPE
+    val fipeCombined = fipeTokens.joinToString("")
+    val filtradoCombined = filtradoTokens.joinToString("")
+
+    // 1. Se os modelos são idênticos ou um contém o outro quando normalizados (ex: "granfur" em "gran furgone")
+    if (fipeCombined.contains(filtradoCombined) || filtradoCombined.contains(fipeCombined)) return true
+
+    // 2. Verificação de cada componente do modelo filtrado individualmente
     return filtradoTokens.all { fToken ->
-        fipeTokens.any { fipeToken ->
-            // Match exato
-            if (fipeToken == fToken) return@any true
+        // Match exato com algum token da Fipe
+        if (fipeTokens.contains(fToken)) return@all true
 
-            // Match de prefixo para letras (ex: "prem" -> "premium", "gran" -> "grand", "d" -> "diesel")
-            if (fToken.all { it.isLetter() } && fipeToken.all { it.isLetter() }) {
-                if (fipeToken.startsWith(fToken)) return@any true
-            }
+        // Match de prefixo (ex: "prem" -> "premium", "116" -> "116i")
+        if (fipeTokens.any { it.startsWith(fToken) && (fToken.length >= 3 || fToken.all { c -> c.isDigit() }) }) return@all true
 
-            // Match para números (ex: "116" filtrado deve bater com "116" em "116ia" fipe)
-            // Note: tokenize() já separa 116ia em ["116", "ia"], então o match será exato no "116"
+        // Match em palavra composta (ex: "cargo" em "eurocargo") ou tokens separados (ex: "ss" em "s" "s")
+        if (fToken.length >= 2 && fipeCombined.contains(fToken)) return@all true
 
-            false
-        }
+        false
     }
 }
 
@@ -111,11 +113,13 @@ private fun String.tokenize(): List<String> {
     // Unifica números: "6.000" -> "6000"
     text = text.replace(Regex("(\\d)[.,](\\d)"), "$1$2")
 
-    // Separa letras de números: "116i" -> "116 i", "D60" -> "D 60"
+    // Garante a separação de letras e números para o regex capturar como tokens distintos (ex: "116i" -> "116 i")
     text = text.replace(Regex("(\\d)([a-zA-Z])"), "$1 $2")
     text = text.replace(Regex("([a-zA-Z])(\\d)"), "$1 $2")
 
-    val regex = Regex("([a-zA-Z]+|[0-9]+)")
+    // O regex captura sequências contínuas de letras ou sequências contínuas de números.
+    // Caracteres especiais e espaços são naturalmente ignorados, servindo apenas como separadores.
+    val regex = Regex("([a-z]+|[0-9]+)")
     return regex.findAll(text)
         .map { it.value }
         .filter { it.isNotBlank() }
