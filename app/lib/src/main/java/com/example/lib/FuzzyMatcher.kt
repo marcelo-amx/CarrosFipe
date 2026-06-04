@@ -55,8 +55,8 @@ object FuzzyMatcher {
         )
     }
 
-    fun String.isAlikeTo(otherString: String, threshold: Double = 0.70) =
-        score(this, otherString) >= threshold
+    fun String.isAlikeTo(otherString: String) =
+        score(this, otherString)
 
     // --- Core: Levenshtein similarity (0.0 to 1.0) ---
     private fun levenshteinSimilarity(a: String, b: String): Double {
