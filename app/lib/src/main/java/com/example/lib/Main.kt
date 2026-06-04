@@ -11,49 +11,53 @@ fun main() {
     lerCarros()
 }
 
-private fun lerCarros() {
-
+fun lerCarros(): MutableList<CarroFiltrado> {
     println("Iniciando processamento...")
-
     println("Fipe: ${carrosFipe.size} registros")
     println("Filtrados: ${carrosFiltrados.size} registros")
 
     val carros: MutableList<CarroFiltrado> = mutableListOf()
 
     carrosFiltrados.forEach { filtrado ->
-        val fipeMatches = carrosFipe.filter { it.brand.equals(filtrado.brand, true) }
-        if (fipeMatches.isNotEmpty()) {
-            processarCarro(filtrado, fipeMatches)?.let { carros.add(it) }
+        // Filtramos a FIPE pela marca, que já está normalizada
+        val brandFipeMatches = carrosFipe.filter { it.brand.equals(filtrado.brand, true) }
+        
+        if (brandFipeMatches.isNotEmpty()) {
+            processarCarro(filtrado, brandFipeMatches)?.let { 
+                carros.add(it) 
+            }
         }
     }
+    return carros
 
-    println("Carros encontrados: ${carros.size}")
+    // Após processar todos, garantimos que cada código FIPE pertença apenas ao melhor match
+    garantirCarrosUnicos(carros)
+
+    println("Carros filtrados com algum código: ${carros.count { it.fipeCodes.isNotEmpty() }}")
+    println("Total de códigos FIPE vinculados: ${carros.sumOf { it.fipeCodes.size }}")
     println("Processamento finalizado.")
 }
 
 private fun processarCarro(filtrado: CarroFiltrado, brandFipeMatches: List<CarroFipe>): CarroFiltrado? {
-
     val fipeCodes: MutableList<String> = mutableListOf()
 
+    // Lida com modelos separados por vírgula
     if (filtrado.model.contains(",")) {
-        filtrado.model.split(",").forEach {
+        filtrado.model.split(",").forEach { subModelo ->
             fipeCodes.addAll(
-                brandFipeMatches.pegarCodigosFipe(
-                    it, filtrado.yearStart, filtrado.yearEnd,
-                )
+                brandFipeMatches.pegarCodigosFipe(subModelo.trim(), filtrado.yearStart, filtrado.yearEnd)
             )
         }
     } else {
         fipeCodes.addAll(
-            brandFipeMatches.pegarCodigosFipe(
-                filtrado.model, filtrado.yearStart, filtrado.yearEnd
-            )
+            brandFipeMatches.pegarCodigosFipe(filtrado.model, filtrado.yearStart, filtrado.yearEnd)
         )
     }
 
-    filtrado.fipeCodes = fipeCodes
-    if (fipeCodes.isNotEmpty()) {
-        println("Encontrado ${fipeCodes.size} códigos para ${filtrado.brand}           ${filtrado.model}.   ${filtrado.title}.     ${filtrado.id}")
+    filtrado.fipeCodes = fipeCodes.distinct()
+    
+    if (filtrado.fipeCodes.isNotEmpty()) {
+        println("Encontrado ${filtrado.fipeCodes.size} códigos para ${filtrado.brand} ${filtrado.model} (${filtrado.id})")
         carrosEncontrados++
         return filtrado
     }
@@ -61,44 +65,43 @@ private fun processarCarro(filtrado: CarroFiltrado, brandFipeMatches: List<Carro
 }
 
 private fun List<CarroFipe>.pegarCodigosFipe(filtradoModelo: String, anoInicio: Int, anoFim: Int): List<String> {
-    val fipeCodes: MutableList<String> = mutableListOf()
-
-    forEach { fipe ->
-        val isYearValidForCar = fipe.verifyValidYear(anoInicio, anoFim)
-            if (fipe.model.containsOrder(filtradoModelo)) {
-                if (!fipeCodes.contains(fipe.id) && isYearValidForCar) fipeCodes.add(fipe.id)
-            }
-    }
-    return fipeCodes
+    return this.filter { fipe ->
+        // Validação de ano e de modelo flexível (token-based)
+        fipe.verifyValidYear(anoInicio, anoFim) && fipe.model.isFlexibleMatch(filtradoModelo)
+    }.map { it.id }
 }
 
-private fun String.containsOrder(otherString: String): Boolean {
-    val lettersOnlyPrimary =
-        lowercase().removeAccents().filter { it.isLetter() }
-    val lettersOnlySecondary =
-        otherString.lowercase().removeAccents().filter { it.isLetter() }
+/**
+ * Verifica se o modelo da FIPE contém todos os componentes (tokens) do modelo filtrado.
+ * Isso resolve o problema de "8500" não bater com "8000" e "RS Q3" exigir o "RS".
+ */
+private fun String.isFlexibleMatch(otherString: String): Boolean {
+    val fipeTokens = this.tokenize()
+    val filtradoTokens = otherString.tokenize()
 
-    val numbersOnlyPrimary = lowercase().removeAccents().filter { it.isDigit() }
-    val numbersOnlySecondary = otherString.lowercase().removeAccents().filter { it.isDigit() }
+    if (filtradoTokens.isEmpty()) return false
 
-    val containsNumberOrder = numbersOnlyPrimary.contains(numbersOnlySecondary)
-    val containsLettersOrder = lettersOnlyPrimary.contains(lettersOnlySecondary)
+    // Todas as palavras/números do modelo filtrado DEVEM estar no modelo FIPE
+    return filtradoTokens.all { fToken ->
+        fipeTokens.contains(fToken)
+    }
+}
 
-    return containsNumberOrder || containsLettersOrder
+/**
+ * Quebra a string em tokens de letras ou números, removendo acentos e símbolos.
+ * Ex: "RS Q3 2.5" -> ["rs", "q", "3", "2", "5"]
+ * Ex: "C-180" -> ["c", "180"]
+ */
+private fun String.tokenize(): List<String> {
+    val regex = Regex("([a-zA-Z]+|[0-9]+)")
+    return regex.findAll(this.lowercase().removeAccents())
+        .map { it.value }
+        .filter { it.isNotBlank() }
+        .toList()
 }
 
 fun CarroFipe.verifyValidYear(anoInicio: Int, anoFim: Int): Boolean {
-    val isYearValidForCar = (anoInicio..anoFim).contains(year)
-    return isYearValidForCar
-}
-
-fun String.hasAllCharacters(needed: String): Boolean {
-    val containerCounts = lowercase().removeAccents().groupingBy { it }.eachCount()
-    val neededCounts = needed.lowercase().removeAccents().groupingBy { it }.eachCount()
-
-    return neededCounts.all { (char, count) ->
-        containerCounts.getOrDefault(char, 0) >= count
-    }
+    return (anoInicio..anoFim).contains(year)
 }
 
 fun String.removeAccents(): String {
@@ -106,38 +109,48 @@ fun String.removeAccents(): String {
     return decomposed.replace("\\p{InCombiningDiacriticalMarks}+".toRegex(), "")
 }
 
+/**
+ * Garante que cada código FIPE seja atribuído apenas ao carro filtrado que melhor se encaixa.
+ */
+private fun garantirCarrosUnicos(carros: List<CarroFiltrado>) {
+    println("Garantindo exclusividade dos códigos FIPE...")
+    val fipeById = carrosFipe.associateBy { it.id }
+    val fipeToCarros = mutableMapOf<String, MutableList<CarroFiltrado>>()
 
-private fun garantirCarrosUnicos(carros: MutableList<CarroFiltrado>) {
-    carros.forEach { carro1 ->
-        carros.forEach { carro2 ->
-            if (carro1.id != carro2.id) {
-                val commonFipeCodes = carro1.fipeCodes.intersect(carro2.fipeCodes.toSet())
-                if (commonFipeCodes.isNotEmpty()) {
-                    commonFipeCodes.forEach { code ->
-                        carrosFipe.find { it.id == code }?.let { fipe ->
-                            var score1 = fipe.model.isAlikeTo(carro1.model)
-                            var score2 = fipe.model.isAlikeTo(carro2.model)
-
-                            if (!fipe.verifyValidYear(carro1.yearStart, carro1.yearEnd)) score1 =
-                                0.0
-                            if (!fipe.verifyValidYear(carro2.yearStart, carro2.yearEnd)) score2 =
-                                0.0
-
-                            if (score1 >= score2) {
-                                carro2.fipeCodes =
-                                    carro2.fipeCodes.toMutableList().apply { remove(code) }
-                            } else {
-                                carro1.fipeCodes =
-                                    carro1.fipeCodes.toMutableList().apply { remove(code) }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        if (carro1.fipeCodes.isEmpty()) {
-            println("Zerado  ${carro1.brand}           ${carro1.model}.   ${carro1.title}.     ${carro1.id}")
+    // Mapeia quais carros estão disputando cada código FIPE
+    carros.forEach { carro ->
+        carro.fipeCodes.forEach { code ->
+            fipeToCarros.getOrPut(code) { mutableListOf() }.add(carro)
         }
     }
 
+    fipeToCarros.forEach { (code, assignedCarros) ->
+        if (assignedCarros.size > 1) {
+            val fipe = fipeById[code] ?: return@forEach
+
+            // Critério de desempate para encontrar o melhor match
+            val bestCar = assignedCarros.maxByOrNull { carro ->
+                val fipeModel = fipe.model.lowercase().removeAccents()
+                val filtradoModel = carro.model.lowercase().removeAccents()
+                
+                // Score base do FuzzyMatcher
+                val score = fipe.model.isAlikeTo(carro.model)
+                
+                // Bônus se o modelo filtrado for o início exato do modelo FIPE (ex: "RS Q3" em "RS Q3 2.5...")
+                val startBonus = if (fipeModel.startsWith(filtradoModel)) 0.6 else 0.0
+                
+                // Bônus se o título completo do filtrado também for similar
+                val titleScore = fipe.model.isAlikeTo(carro.title) * 0.4
+                
+                score + startBonus + titleScore
+            }
+
+            // Remove este código de todos os carros que perderam a disputa
+            assignedCarros.forEach { carro ->
+                if (carro != bestCar) {
+                    carro.fipeCodes = carro.fipeCodes.filter { it != code }
+                }
+            }
+        }
+    }
 }
