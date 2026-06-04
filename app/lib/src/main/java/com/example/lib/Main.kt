@@ -21,10 +21,10 @@ fun lerCarros(): MutableList<CarroFiltrado> {
     carrosFiltrados.forEach { filtrado ->
         // Filtramos a FIPE pela marca, que já está normalizada
         val brandFipeMatches = carrosFipe.filter { it.brand.equals(filtrado.brand, true) }
-        
+
         if (brandFipeMatches.isNotEmpty()) {
-            processarCarro(filtrado, brandFipeMatches)?.let { 
-                carros.add(it) 
+            processarCarro(filtrado, brandFipeMatches)?.let {
+                carros.add(it)
             }
         }
     }
@@ -55,7 +55,7 @@ private fun processarCarro(filtrado: CarroFiltrado, brandFipeMatches: List<Carro
     }
 
     filtrado.fipeCodes = fipeCodes.distinct()
-    
+
     if (filtrado.fipeCodes.isNotEmpty()) {
         println("Encontrado ${filtrado.fipeCodes.size} códigos para ${filtrado.brand} ${filtrado.model} (${filtrado.id})")
         carrosEncontrados++
@@ -72,8 +72,7 @@ private fun List<CarroFipe>.pegarCodigosFipe(filtradoModelo: String, anoInicio: 
 }
 
 /**
- * Verifica se o modelo da FIPE contém todos os componentes (tokens) do modelo filtrado.
- * Isso resolve o problema de "8500" não bater com "8000" e "RS Q3" exigir o "RS".
+ * Verifica se o modelo da FIPE contém todos os componentes do modelo filtrado de forma flexível.
  */
 private fun String.isFlexibleMatch(otherString: String): Boolean {
     val fipeTokens = this.tokenize()
@@ -81,20 +80,43 @@ private fun String.isFlexibleMatch(otherString: String): Boolean {
 
     if (filtradoTokens.isEmpty()) return false
 
-    // Todas as palavras/números do modelo filtrado DEVEM estar no modelo FIPE
+    // Cada token do filtrado deve ser encontrado ou estar contido em algum token da FIPE
     return filtradoTokens.all { fToken ->
-        fipeTokens.contains(fToken)
+        fipeTokens.any { fipeToken ->
+            // Match exato
+            if (fipeToken == fToken) return@any true
+
+            // Match de prefixo para letras (ex: "prem" -> "premium", "gran" -> "grand", "d" -> "diesel")
+            if (fToken.all { it.isLetter() } && fipeToken.all { it.isLetter() }) {
+                if (fipeToken.startsWith(fToken)) return@any true
+            }
+
+            // Match para números (ex: "116" filtrado deve bater com "116" em "116ia" fipe)
+            // Note: tokenize() já separa 116ia em ["116", "ia"], então o match será exato no "116"
+
+            false
+        }
     }
 }
 
 /**
- * Quebra a string em tokens de letras ou números, removendo acentos e símbolos.
- * Ex: "RS Q3 2.5" -> ["rs", "q", "3", "2", "5"]
- * Ex: "C-180" -> ["c", "180"]
+ * Tokenização inteligente:
+ * - Remove pontos/vírgulas em números (6.000 -> 6000)
+ * - Separa letras de números colados (116i -> 116 i)
+ * - Remove acentos
  */
 private fun String.tokenize(): List<String> {
+    var text = this.lowercase().removeAccents()
+
+    // Unifica números: "6.000" -> "6000"
+    text = text.replace(Regex("(\\d)[.,](\\d)"), "$1$2")
+
+    // Separa letras de números: "116i" -> "116 i", "D60" -> "D 60"
+    text = text.replace(Regex("(\\d)([a-zA-Z])"), "$1 $2")
+    text = text.replace(Regex("([a-zA-Z])(\\d)"), "$1 $2")
+
     val regex = Regex("([a-zA-Z]+|[0-9]+)")
-    return regex.findAll(this.lowercase().removeAccents())
+    return regex.findAll(text)
         .map { it.value }
         .filter { it.isNotBlank() }
         .toList()
