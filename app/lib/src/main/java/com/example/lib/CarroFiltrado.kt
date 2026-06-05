@@ -11,7 +11,7 @@ data class CarroFiltrado(
     @SerializedName("ano_inicio_atual") val nullableYearStart: Int?,
     @SerializedName("ano_fim_atual") val nullableYearEnd: Int?,
     @SerializedName("slug") val slug: String,
-    @SerializedName("fipe_codes") var fipeCodes: List<String> = emptyList(),
+    @SerializedName("fipe_codes") var fipeCodes: List<CarroFipe> = emptyList(),
 ) {
 
     val yearStart get() = nullableYearStart ?: 0

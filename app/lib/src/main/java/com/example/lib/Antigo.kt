@@ -10,7 +10,7 @@ fun main() {
     antigo.subtract(novo.toSet()).apply {
         println("ZERADOS: $size")
         forEach {
-            println("Zerado  ${it.brand}           ${it.model}.   ${it.title}.     ${it.id}")
+            println("${it.brand}-${it.model}")
         }
     }
 }
@@ -56,7 +56,7 @@ private fun processarCarro(filtrado: CarroFiltrado, brandFipeMatches: List<Carro
         )
     }
 
-    filtrado.fipeCodes = fipeCodes
+//    filtrado.fipeCodes = fipeCodes
     if (fipeCodes.isNotEmpty()) {
         println("Encontrado ${fipeCodes.size} códigos para ${filtrado.brand}           ${filtrado.model}.   ${filtrado.title}.     ${filtrado.id}")
         carrosEncontrados++
@@ -109,7 +109,7 @@ private fun garantirCarrosUnicos(carros: MutableList<CarroFiltrado>) {
                 val commonFipeCodes = carro1.fipeCodes.intersect(carro2.fipeCodes.toSet())
                 if (commonFipeCodes.isNotEmpty()) {
                     commonFipeCodes.forEach { code ->
-                        carrosFipe.find { it.id == code }?.let { fipe ->
+                        carrosFipe.find { it.id == code.id }?.let { fipe ->
                             var score1 = fipe.model.isAlikeTo(carro1.model)
                             var score2 = fipe.model.isAlikeTo(carro2.model)
 
