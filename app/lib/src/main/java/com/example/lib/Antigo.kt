@@ -38,7 +38,7 @@ private fun lerCarros1(): MutableList<CarroFiltrado> {
 
 private fun processarCarro(filtrado: CarroFiltrado, brandFipeMatches: List<CarroFipe>): CarroFiltrado? {
 
-    val fipeCodes: MutableList<String> = mutableListOf()
+    val fipeCodes: MutableList<CarroFipe> = mutableListOf()
 
     if (filtrado.model.contains(",")) {
         filtrado.model.split(",").forEach {
@@ -56,7 +56,7 @@ private fun processarCarro(filtrado: CarroFiltrado, brandFipeMatches: List<Carro
         )
     }
 
-//    filtrado.fipeCodes = fipeCodes
+    filtrado.fipeCodes = fipeCodes
     if (fipeCodes.isNotEmpty()) {
         println("Encontrado ${fipeCodes.size} códigos para ${filtrado.brand}           ${filtrado.model}.   ${filtrado.title}.     ${filtrado.id}")
         carrosEncontrados++
@@ -65,13 +65,13 @@ private fun processarCarro(filtrado: CarroFiltrado, brandFipeMatches: List<Carro
     return null
 }
 
-private fun List<CarroFipe>.pegarCodigosFipe(filtradoModelo: String, anoInicio: Int, anoFim: Int): List<String> {
-    val fipeCodes: MutableList<String> = mutableListOf()
+private fun List<CarroFipe>.pegarCodigosFipe(filtradoModelo: String, anoInicio: Int, anoFim: Int): List<CarroFipe> {
+    val fipeCodes: MutableList<CarroFipe> = mutableListOf()
 
     forEach { fipe ->
         val isYearValidForCar = fipe.verifyValidYear(anoInicio, anoFim)
-        if (fipe.model.containsOrder(filtradoModelo)) {
-            if (!fipeCodes.contains(fipe.id) && isYearValidForCar) fipeCodes.add(fipe.id)
+        if (fipe.model.hasAllCharacters(filtradoModelo)) {
+            if ((fipeCodes.find { it.id == fipe.id } == null) && isYearValidForCar) fipeCodes.add(fipe)
         }
     }
     return fipeCodes

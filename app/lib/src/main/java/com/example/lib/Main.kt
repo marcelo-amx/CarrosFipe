@@ -83,11 +83,24 @@ private fun String.isFlexibleMatch(otherString: String): Boolean {
     val fipeCombined = fipeTokens.joinToString("")
     val filtradoCombined = filtradoTokens.joinToString("")
 
-    // 1. Se os modelos são idênticos ou um contém o outro quando normalizados
-    // Isso resolve casos como "608D" (filtrado) contendo "608" (fipe) ou "D 11000" contendo "11000"
+    // 1. Regra para identificadores alfanuméricos curtos (ex: A3, S3, Q3, X5)
+    // Agora que a tokenização mantém "a3" unido, verificamos se ele existe como token ou prefixo forte
+    val hasAlphanumericShort = filtradoTokens.any { it.length <= 3 && it.any { c -> c.isDigit() } && it.any { c -> c.isLetter() } }
+    if (hasAlphanumericShort) {
+        val allTokensMatchStrictly = filtradoTokens.all { fToken ->
+            fipeTokens.any { fipeToken ->
+                fipeToken == fToken || (fipeToken.startsWith(fToken) && fToken.length >= 2)
+            }
+        }
+        if (allTokensMatchStrictly) return true
+        // Se falhou no match estrito de ID, não deixa passar para o genérico se for muito curto
+        if (filtradoCombined.length <= 3) return false
+    }
+
+    // 2. Se os modelos são idênticos ou um contém o outro quando normalizados
     if (fipeCombined.contains(filtradoCombined) || filtradoCombined.contains(fipeCombined)) return true
 
-    // 2. Verificação de cada componente do modelo filtrado individualmente
+    // 3. Verificação de cada componente do modelo filtrado individualmente
     return filtradoTokens.all { fToken ->
         // Match exato com algum token da Fipe
         if (fipeTokens.contains(fToken)) return@all true
@@ -118,13 +131,9 @@ private fun String.tokenize(): List<String> {
     // Unifica números: "6.000" -> "6000"
     text = text.replace(Regex("(\\d)[.,](\\d)"), "$1$2")
 
-    // Garante a separação de letras e números para o regex capturar como tokens distintos (ex: "116i" -> "116 i")
-    text = text.replace(Regex("(\\d)([a-zA-Z])"), "$1 $2")
-    text = text.replace(Regex("([a-zA-Z])(\\d)"), "$1 $2")
-
-    // O regex captura sequências contínuas de letras ou sequências contínuas de números.
-    // Caracteres especiais e espaços são naturalmente ignorados, servindo apenas como separadores.
-    val regex = Regex("([a-z]+|[0-9]+)")
+    // Removemos a separação forçada de letras e números para manter IDs como "a3", "q3", "116i" e "3p" íntegros.
+    // O regex abaixo agora captura sequências alfanuméricas completas.
+    val regex = Regex("([a-z0-9]+)")
     return regex.findAll(text)
         .map { it.value }
         .filter { it.isNotBlank() }
@@ -163,23 +172,48 @@ private fun garantirCarrosUnicos(carros: List<CarroFiltrado>) {
             val bestCar = assignedCarros.maxByOrNull { carro ->
                 val fipeModel = fipe.model.lowercase().removeAccents()
                 val filtradoModel = carro.model.lowercase().removeAccents()
-                
+                val fipeTokens = fipe.model.tokenize()
+                val filtradoTokens = carro.model.tokenize()
+
                 // Score base do FuzzyMatcher
-                val score = fipe.model.isAlikeTo(carro.model)
-                
+                var score = fipe.model.isAlikeTo(carro.model)
+
                 // Bônus se o modelo filtrado for o início exato do modelo FIPE (ex: "RS Q3" em "RS Q3 2.5...")
-                val startBonus = if (fipeModel.startsWith(filtradoModel)) 0.6 else 0.0
-                
+                if (fipeModel.startsWith(filtradoModel)) score += 0.6
+
+                // 1. Bônus por densidade de informação:
+                // Quanto mais tokens o modelo filtrado tem em comum com a FIPE, melhor.
+                // Isso faz o "Tiggo 7 Pro" (3 tokens) ganhar do "Tiggo 7" (2 tokens)
+                val matchingTokensCount = filtradoTokens.count { ft -> fipeTokens.contains(ft) }
+                score += (matchingTokensCount * 1.0)
+
+                // 2. Bônus de Match Completo:
+                // Se o modelo filtrado foi totalmente encontrado na FIPE, ganha bônus extra.
+                if (matchingTokensCount == filtradoTokens.size && filtradoTokens.isNotEmpty()) {
+                    score += 2.0
+                }
+
+                // Penalidade para "parte de token": Se o modelo filtrado é apenas uma parte de um token FIPE
+                // (Ex: Filtrado "S3" é parte do token "RS3" da FIPE).
+                val isPartialMatch = filtradoTokens.any { ft -> fipeTokens.any { it.contains(ft) && it != ft } }
+                if (isPartialMatch) score -= 0.5
+
+                // 3. Penalidade de "Tokens Sobrando" na FIPE:
+                // Se a FIPE tem muitos detalhes que o modelo filtrado não capturou, o score cai.
+                // O "Tiggo 7 Pro" deixará menos tokens sobrando na FIPE do que o "Tiggo 7".
+                val unmatchedFipeTokens = fipeTokens.size - matchingTokensCount
+                score -= (unmatchedFipeTokens * 0.2)
+
                 // Bônus se o título completo do filtrado também for similar
                 val titleScore = fipe.model.isAlikeTo(carro.title) * 0.4
                 
-                score + startBonus + titleScore
+                score + titleScore
             }
 
             // Remove este código de todos os carros que perderam a disputa
             assignedCarros.forEach { carro ->
                 if (carro != bestCar) {
-                    carro.fipeCodes = carro.fipeCodes.filter { it != code }
+                    carro.fipeCodes = carro.fipeCodes.filter { it.id != code.id }
                 }
             }
         }
