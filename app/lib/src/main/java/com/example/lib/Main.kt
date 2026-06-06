@@ -8,7 +8,11 @@ val carrosFipe = LeitorJson.carregarFipe()
 val carrosFiltrados = LeitorJson.carregarFiltrados().sortedBy { it.brand }
 
 fun main() {
-    lerCarros()
+    val carros = lerCarros()
+    carros.forEach {
+        it.fipeCodes = it.fipeCars.map { it.id }
+    }
+    LeitorJson.salvarFiltrados(carros)
 }
 
 fun lerCarros(): MutableList<CarroFiltrado> {
@@ -32,12 +36,12 @@ fun lerCarros(): MutableList<CarroFiltrado> {
     // Após processar todos, garantimos que cada código FIPE pertença apenas ao melhor match
     garantirCarrosUnicos(carros)
 
-    println("Carros filtrados com algum código: ${carros.count { it.fipeCodes.isNotEmpty() }}")
-    println("Total de códigos FIPE vinculados: ${carros.sumOf { it.fipeCodes.size }}")
+    println("Carros filtrados com algum código: ${carros.count { it.fipeCars.isNotEmpty() }}")
+    println("Total de códigos FIPE vinculados: ${carros.sumOf { it.fipeCars.size }}")
     println("Processamento finalizado.")
     //Verificar esses casos
     // Verificar também o Audi TT e BMW M135i
-    val x = carros.filter { it.fipeCodes.isEmpty() }.map { it.model }
+    val x = carros.filter { it.fipeCars.isEmpty() }.map { it.model }
     return carros
 }
 
@@ -57,10 +61,10 @@ private fun processarCarro(filtrado: CarroFiltrado, brandFipeMatches: List<Carro
         )
     }
 
-    filtrado.fipeCodes = fipeCodes.distinctBy { it.id }
+    filtrado.fipeCars = fipeCodes.distinctBy { it.id }
 
-    if (filtrado.fipeCodes.isNotEmpty()) {
-        println("Encontrado ${filtrado.fipeCodes.size} códigos para ${filtrado.brand} ${filtrado.model} (${filtrado.id})")
+    if (filtrado.fipeCars.isNotEmpty()) {
+        println("Encontrado ${filtrado.fipeCars.size} códigos para ${filtrado.brand} ${filtrado.model} (${filtrado.id})")
         carrosEncontrados++
         return filtrado
     }
@@ -187,7 +191,7 @@ private fun garantirCarrosUnicos(carros: List<CarroFiltrado>) {
 
     // Mapeia quais carros estão disputando cada código FIPE
     carros.forEach { carro ->
-        carro.fipeCodes.forEach { code ->
+        carro.fipeCars.forEach { code ->
             fipeToCarros.getOrPut(code) { mutableListOf() }.add(carro)
         }
     }
@@ -269,7 +273,7 @@ private fun garantirCarrosUnicos(carros: List<CarroFiltrado>) {
                     val carSubModels = if (carro.model.contains(",")) carro.model.split(",").map { it.trim() } else listOf(carro.model)
                     val hasSameModel = carSubModels.any { it.normalize() == normalizedBestModel }
                     if (!hasSameModel) {
-                        carro.fipeCodes = carro.fipeCodes.filter { it.id != code.id }
+                        carro.fipeCars = carro.fipeCars.filter { it.id != code.id }
                     }
                 }
             }

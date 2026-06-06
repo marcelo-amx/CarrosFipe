@@ -2,6 +2,7 @@ package com.example.lib
 
 import com.google.gson.reflect.TypeToken
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import java.io.File
 
 object LeitorJson {
@@ -27,6 +28,16 @@ object LeitorJson {
         } catch (e: Exception) {
             e.printStackTrace()
             emptyList()
+        }
+    }
+    fun salvarFiltrados(lista: List<CarroFiltrado>) {
+        try {
+            val jsonFile = File("C:\\Users\\User\\AndroidStudioProjects\\CarrosFIpe\\app\\src\\main\\res\\raw\\filtrada_fipe.json")
+            val gson = GsonBuilder().setPrettyPrinting().create()
+            val jsonString = gson.toJson(lista)
+            jsonFile.writeText(jsonString)
+        } catch (e: Exception) {
+            e.printStackTrace()
         }
     }
 }

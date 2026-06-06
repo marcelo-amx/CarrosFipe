@@ -1,7 +1,6 @@
 package com.example.lib
 
 import com.example.lib.FuzzyMatcher.isAlikeTo
-import java.text.Normalizer
 
 fun main() {
     val antigo = lerCarros1()
@@ -56,7 +55,7 @@ private fun processarCarro(filtrado: CarroFiltrado, brandFipeMatches: List<Carro
         )
     }
 
-    filtrado.fipeCodes = fipeCodes
+    filtrado.fipeCars = fipeCodes
     if (fipeCodes.isNotEmpty()) {
         println("Encontrado ${fipeCodes.size} códigos para ${filtrado.brand}           ${filtrado.model}.   ${filtrado.title}.     ${filtrado.id}")
         carrosEncontrados++
@@ -106,7 +105,7 @@ private fun garantirCarrosUnicos(carros: MutableList<CarroFiltrado>) {
     carros.forEach { carro1 ->
         carros.forEach { carro2 ->
             if (carro1.id != carro2.id) {
-                val commonFipeCodes = carro1.fipeCodes.intersect(carro2.fipeCodes.toSet())
+                val commonFipeCodes = carro1.fipeCars.intersect(carro2.fipeCars.toSet())
                 if (commonFipeCodes.isNotEmpty()) {
                     commonFipeCodes.forEach { code ->
                         carrosFipe.find { it.id == code.id }?.let { fipe ->
@@ -119,18 +118,18 @@ private fun garantirCarrosUnicos(carros: MutableList<CarroFiltrado>) {
                                 0.0
 
                             if (score1 >= score2) {
-                                carro2.fipeCodes =
-                                    carro2.fipeCodes.toMutableList().apply { remove(code) }
+                                carro2.fipeCars =
+                                    carro2.fipeCars.toMutableList().apply { remove(code) }
                             } else {
-                                carro1.fipeCodes =
-                                    carro1.fipeCodes.toMutableList().apply { remove(code) }
+                                carro1.fipeCars =
+                                    carro1.fipeCars.toMutableList().apply { remove(code) }
                             }
                         }
                     }
                 }
             }
         }
-        if (carro1.fipeCodes.isEmpty()) {
+        if (carro1.fipeCars.isEmpty()) {
             println("Zerado  ${carro1.brand}           ${carro1.model}.   ${carro1.title}.     ${carro1.id}")
         }
     }
