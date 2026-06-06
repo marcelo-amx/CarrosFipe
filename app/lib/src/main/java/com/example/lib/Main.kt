@@ -35,6 +35,9 @@ fun lerCarros(): MutableList<CarroFiltrado> {
     println("Carros filtrados com algum código: ${carros.count { it.fipeCodes.isNotEmpty() }}")
     println("Total de códigos FIPE vinculados: ${carros.sumOf { it.fipeCodes.size }}")
     println("Processamento finalizado.")
+    //Verificar esses casos
+    // Verificar também o Audi TT e BMW M135i
+    val x = carros.filter { it.fipeCodes.isEmpty() }.map { it.model }
     return carros
 }
 
@@ -83,37 +86,58 @@ private fun String.isFlexibleMatch(otherString: String): Boolean {
     val fipeCombined = fipeTokens.joinToString("")
     val filtradoCombined = filtradoTokens.joinToString("")
 
-    // 1. Regra para identificadores alfanuméricos curtos (ex: A3, S3, Q3, X5)
-    // Agora que a tokenização mantém "a3" unido, verificamos se ele existe como token ou prefixo forte
-    val hasAlphanumericShort = filtradoTokens.any { it.length <= 3 && it.any { c -> c.isDigit() } && it.any { c -> c.isLetter() } }
-    if (hasAlphanumericShort) {
+    // 1. Regra para identificadores alfanuméricos (ex: A3, S3, Q3, X5, M135i)
+    // Exigimos match estrito ou de prefixo longo para evitar que "M" bata em "M135i"
+    val hasAlphanumeric = filtradoTokens.any { it.length <= 6 && it.any { c -> c.isDigit() } && it.any { c -> c.isLetter() } }
+    if (hasAlphanumeric) {
         val allTokensMatchStrictly = filtradoTokens.all { fToken ->
             fipeTokens.any { fipeToken ->
                 fipeToken == fToken || (fipeToken.startsWith(fToken) && fToken.length >= 2)
             }
         }
         if (allTokensMatchStrictly) return true
-        // Se falhou no match estrito de ID, não deixa passar para o genérico se for muito curto
-        if (filtradoCombined.length <= 3) return false
+        // Se falhou no match estrito de ID, não deixa passar para o genérico se for um modelo curto
+        if (filtradoCombined.length <= 5) return false
     }
 
     // 2. Se os modelos são idênticos ou um contém o outro quando normalizados
-    if (fipeCombined.contains(filtradoCombined) || filtradoCombined.contains(fipeCombined)) return true
+    // Bloqueamos strings muito curtas aqui para evitar falsos positivos como "tt" em "quattro"
+    if (filtradoCombined.length > 2 && (fipeCombined.contains(filtradoCombined) || filtradoCombined.contains(fipeCombined))) return true
 
     // 3. Verificação de cada componente do modelo filtrado individualmente
     return filtradoTokens.all { fToken ->
         // Match exato com algum token da Fipe
         if (fipeTokens.contains(fToken)) return@all true
 
-        // Match de prefixo em AMBAS as direções (ex: "constel" vs "constellation")
+        // Match de prefixo
         if (fipeTokens.any { fipeToken ->
-            val isPrefix = fipeToken.startsWith(fToken) || fToken.startsWith(fipeToken)
-            // Só aceita prefixo se for significativo (>= 3 chars) ou se forem números
-            isPrefix && (fToken.length >= 3 || fipeToken.length >= 3 || fToken.all { it.isDigit() })
+            // Caso 1: Fipe tem o termo mais completo (ex: filtrado "116" -> fipe "116i")
+            if (fipeToken.startsWith(fToken) && (fToken.length >= 3 || fToken.all { it.isDigit() })) return@any true
+            
+            // Caso 2: Filtrado tem o termo mais completo (ex: filtrado "constellation" -> fipe "constel")
+            // Bloqueia filtrado "m135i" -> fipe "m" exigindo que o prefixo da fipe seja significativo
+            if (fToken.startsWith(fipeToken) && fipeToken.length >= 3) return@any true
+            
+            false
         }) return@all true
 
         // Match em palavra composta (ex: "cargo" em "eurocargo") ou tokens separados
-        if (fToken.length >= 2 && fipeCombined.contains(fToken)) return@all true
+        if (fToken.length >= 2 && fipeCombined.contains(fToken)) {
+            // Proteção contra falsos positivos de 2 letras (ex: "tt" em "quattro")
+            if (fToken.length == 2) {
+                // Se o token de 2 letras é o início de algum token da Fipe (ex: "A3" em "A3sb"), aceitamos.
+                val isPrefixOfAny = fipeTokens.any { it.startsWith(fToken) }
+                if (isPrefixOfAny) return@all true
+                
+                // Se o token está "escondido" no meio de uma única palavra da Fipe e não é o início dela,
+                // recusamos (ex: "tt" dentro de "quattro").
+                val isInternalToAny = fipeTokens.any { it.contains(fToken) && !it.startsWith(fToken) }
+                if (isInternalToAny) return@all false
+                
+                // Se não é interno a nenhuma palavra mas está no combined, é uma junção (ex: "s"+"s" = "ss"), aceitamos.
+            }
+            return@all true
+        }
 
         false
     }
@@ -149,6 +173,10 @@ fun String.removeAccents(): String {
     return decomposed.replace("\\p{InCombiningDiacriticalMarks}+".toRegex(), "")
 }
 
+fun String.normalize(): String {
+    return lowercase().removeAccents().replace("-", " ")
+}
+
 /**
  * Garante que cada código FIPE seja atribuído apenas ao carro filtrado que melhor se encaixa.
  */
@@ -168,52 +196,81 @@ private fun garantirCarrosUnicos(carros: List<CarroFiltrado>) {
         if (assignedCarros.size > 1) {
             val fipe = fipeById[code.id] ?: return@forEach
 
-            // Critério de desempate para encontrar o melhor match
-            val bestCar = assignedCarros.maxByOrNull { carro ->
-                val fipeModel = fipe.model.lowercase().removeAccents()
-                val filtradoModel = carro.model.lowercase().removeAccents()
-                val fipeTokens = fipe.model.tokenize()
-                val filtradoTokens = carro.model.tokenize()
+            // Critério de desempate para encontrar o melhor match, considerando submodelos separados por vírgula
+            val winningResult = assignedCarros.flatMap { carro ->
+                val subModels = if (carro.model.contains(",")) carro.model.split(",").map { it.trim() } else listOf(carro.model)
+                subModels.map { subModel ->
+                    val fipeModel = fipe.model.lowercase().removeAccents()
+                    val filtradoModel = subModel.lowercase().removeAccents()
+                    val fipeTokens = fipe.model.tokenize()
+                    val filtradoTokens = subModel.tokenize()
 
-                // Score base do FuzzyMatcher
-                var score = fipe.model.isAlikeTo(carro.model)
+                    // Score base do FuzzyMatcher
+                    var score = fipe.model.isAlikeTo(subModel)
 
-                // Bônus se o modelo filtrado for o início exato do modelo FIPE (ex: "RS Q3" em "RS Q3 2.5...")
-                if (fipeModel.startsWith(filtradoModel)) score += 0.6
+                    // Bônus se o modelo filtrado for o início exato do modelo FIPE (ex: "RS Q3" em "RS Q3 2.5...")
+                    if (fipeModel.startsWith(filtradoModel)) score += 0.4
 
-                // 1. Bônus por densidade de informação:
-                // Quanto mais tokens o modelo filtrado tem em comum com a FIPE, melhor.
-                // Isso faz o "Tiggo 7 Pro" (3 tokens) ganhar do "Tiggo 7" (2 tokens)
-                val matchingTokensCount = filtradoTokens.count { ft -> fipeTokens.contains(ft) }
-                score += (matchingTokensCount * 1.0)
+                    // 1. Bônus por densidade de informação:
+                    // Quanto mais tokens o modelo filtrado tem em comum com a FIPE, melhor.
+                    // Agora aceita matches parciais (prefixos) para lidar com "s44" vs "s44t"
+                    val matchingTokensCount = filtradoTokens.count { ft -> 
+                        fipeTokens.any { fipeToken -> 
+                            fipeToken == ft || 
+                            (ft.length >= 3 && fipeToken.startsWith(ft)) || 
+                            (fipeToken.length >= 3 && ft.startsWith(fipeToken))
+                        }
+                    }
+                    score += (matchingTokensCount * 1.5)
 
-                // 2. Bônus de Match Completo:
-                // Se o modelo filtrado foi totalmente encontrado na FIPE, ganha bônus extra.
-                if (matchingTokensCount == filtradoTokens.size && filtradoTokens.isNotEmpty()) {
-                    score += 2.0
+                    // 2. Bônus de Especificidade: 
+                    // Modelos mais detalhados (mais tokens) tendem a ser melhores matches se os tokens batem.
+                    score += (filtradoTokens.size * 0.4)
+
+                    // 3. Bônus para Palavras-Chave Técnicas (Hib, Diesel, Turbo, etc)
+                    // Se o carro filtrado especifica algo técnico que a FIPE tem, ele é o match correto.
+                    val technicalKeywords = listOf("hib", "hibrido", "hybrid", "diesel", "turbo", "flex", "eletrico", "electric", "4x4", "quattro")
+                    filtradoTokens.forEach { ft ->
+                        if (technicalKeywords.contains(ft) && fipeTokens.contains(ft)) {
+                            score += 2.0
+                        }
+                    }
+
+                    // 3. Bônus de Match Completo:
+                    // Se o modelo filtrado foi totalmente encontrado na FIPE, ganha bônus extra.
+                    if (matchingTokensCount == filtradoTokens.size && filtradoTokens.isNotEmpty()) {
+                        score += 2.0
+                    }
+
+                    // Penalidade para "parte de token": Se o modelo filtrado é apenas uma parte de um token FIPE
+                    // (Ex: Filtrado "S3" é parte do token "RS3" da FIPE).
+                    val isPartialMatch = filtradoTokens.any { ft -> fipeTokens.any { it.contains(ft) && it != ft } }
+                    if (isPartialMatch) score -= 0.5
+
+                    // 3. Penalidade de "Tokens Sobrando" na FIPE:
+                    // Se a FIPE tem muitos detalhes que o modelo filtrado não capturou, o score cai.
+                    // O "Tiggo 7 Pro" deixará menos tokens sobrando na FIPE do que o "Tiggo 7".
+                    val unmatchedFipeTokens = fipeTokens.size - matchingTokensCount
+                    score -= (unmatchedFipeTokens * 0.2)
+
+                    // Bônus se o título completo do filtrado também for similar
+                    val titleScore = fipe.model.isAlikeTo(carro.title) * 0.4
+                    
+                    Triple(carro, subModel, score + titleScore)
                 }
+            }.maxByOrNull { it.third }
 
-                // Penalidade para "parte de token": Se o modelo filtrado é apenas uma parte de um token FIPE
-                // (Ex: Filtrado "S3" é parte do token "RS3" da FIPE).
-                val isPartialMatch = filtradoTokens.any { ft -> fipeTokens.any { it.contains(ft) && it != ft } }
-                if (isPartialMatch) score -= 0.5
-
-                // 3. Penalidade de "Tokens Sobrando" na FIPE:
-                // Se a FIPE tem muitos detalhes que o modelo filtrado não capturou, o score cai.
-                // O "Tiggo 7 Pro" deixará menos tokens sobrando na FIPE do que o "Tiggo 7".
-                val unmatchedFipeTokens = fipeTokens.size - matchingTokensCount
-                score -= (unmatchedFipeTokens * 0.2)
-
-                // Bônus se o título completo do filtrado também for similar
-                val titleScore = fipe.model.isAlikeTo(carro.title) * 0.4
-                
-                score + titleScore
-            }
-
-            // Remove este código de todos os carros que perderam a disputa
-            assignedCarros.forEach { carro ->
-                if (carro != bestCar) {
-                    carro.fipeCodes = carro.fipeCodes.filter { it.id != code.id }
+            // Remove este código de todos os carros que possuem um modelo diferente do vencedor.
+            // Isso permite que anos diferentes do MESMO modelo (ex: Gol 2004 e Gol 2005) 
+            // mantenham o mesmo código FIPE, mas separa modelos distintos (ex: Tiggo 7 e Tiggo 7 Pro).
+            winningResult?.let { (_, bestSubModel, _) ->
+                val normalizedBestModel = bestSubModel.normalize()
+                assignedCarros.forEach { carro ->
+                    val carSubModels = if (carro.model.contains(",")) carro.model.split(",").map { it.trim() } else listOf(carro.model)
+                    val hasSameModel = carSubModels.any { it.normalize() == normalizedBestModel }
+                    if (!hasSameModel) {
+                        carro.fipeCodes = carro.fipeCodes.filter { it.id != code.id }
+                    }
                 }
             }
         }

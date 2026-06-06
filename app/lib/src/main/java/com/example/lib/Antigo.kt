@@ -10,7 +10,7 @@ fun main() {
     antigo.subtract(novo.toSet()).apply {
         println("ZERADOS: $size")
         forEach {
-            println("${it.brand}-${it.model}")
+            println("${it.brand}-${it.model} - ${it.id}")
         }
     }
 }
